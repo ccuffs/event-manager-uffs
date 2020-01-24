@@ -41,9 +41,27 @@ Finalmente, é necessário criar uma chave para a aplicação:
 ```bash
 php artisan key:generate
 ```
+#### Configuração do php
+Algumas dependências do php precisam ser instaladas. Para isso execute o comando:
+```bash
+composer install
+```
 
-Agora está tudo pronto para rodar o projeto:
+#### Configuração do Node
+Também é necessário que todas as dependências do JavaScript estejam prontas:
+```bash
+npm install
+```
+
+#### Executando o projeto
+Agora está tudo pronto para rodar o projeto. Primeiro compile o JavaScript, css, e demais recursos:
+```bash
+sudo npm run dev
+```
+
+Em seguide inicie o servidor Laravel:
 ```bash
 php artisan serve
 ```
+
 A aplicação estará rodando na porta 8000 e pode ser acessada em [localhost:8000](http://127.0.0.1:8000).
