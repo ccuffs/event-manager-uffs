@@ -8,20 +8,42 @@ O gerenciador de eventos é um sistema cujo objetivo é facilitar a criação, g
  - Gerencia seus inscritos;
 
 ## Instalação
+### Dependências
 Para executar o projeto será necessário a instalação das seguintes dependências:
  - [PHP](https://www.php.net/downloads);
  - [Composer](https://getcomposer.org/download/);
  - [MySQL](https://www.mysql.com/downloads/);
  - [Nodejs](https://nodejs.org/en/)
  - [NPM](https://www.npmjs.com/package/npm);
-
-### Utilização
-#### Clone do repositório
-Antes de fazer o clone certifique-se de ter feito o [_fork_](https://help.github.com/pt/github/getting-started-with-github/fork-a-repo) do repositório só então execute:
-
+### Configurando o projeto
+Primeiramente você deve clonar o repositório.
 #### Configuração do banco de dados
-Primeiramente acesse o MySQL Server através do comando `sudo mysql -u root -p`, digite seu login e então execute:`create database event_manager` para criar a base de dados. Após isso sua base estará criada basta estabelecer a conexão com a aplicação.
+O SGBD utilizado é o MySQL. primeiramente você precisa acessá-lo e criar um novo banco de dados (é recomendado criar um usuário diferente do root, embora não seja estritamente necessário):
+```mysql
+CREATE DATABASE <nome-do-banco>
+```
 
-#### Configurações Finais
-Abra o projeto no seu editor e modifique o arquivo `.env.example` definindo os "campos" `DB_DATABASE`, `DB_USERNAME` e `DB_PASSWORD` para o nome do seu banco dados e seu login no MySQL Server respectivamente, depois renomeie esse arquivo para `.env`. Por fim execute as migrations: `php artisan migrate`, gere a chave de autenticação da aplicação: `php artisan key:generate` e então rode o servidor: `php artisan serve` e acesse http://localhost:8000 se nenhum erro aparecer meus parabéns \o/, você está pronto para começar a contribuir com o projeto.
+#### Configuração do Laravel
+Crie um arquivo `.env` utilizando como base o arquivo já existente `.env_example`:
+```bash
+cp .env_example .env
+```
 
+Em seguida, edite o campo `DB_DATABASE` para `<nome-do-banco>` que foi criado anteriormente.
+Edite também os campos `DB_USERNAME` para o usuário do MySQL e `DB_PASSWORD` para sua senha.
+
+Após, crie os esquemas rodando o comando:
+```bash
+php artisan migrate
+```
+
+Finalmente, é necessário criar uma chave para a aplicação:
+```bash
+php artisan key:generate
+```
+
+Agora está tudo pronto para rodar o projeto:
+```bash
+php artisan serve
+```
+A aplicação estará rodando na porta 8000 e pode ser acessada em [localhost:8000](http://127.0.0.1:8000).
