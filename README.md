@@ -65,3 +65,10 @@ php artisan serve
 ```
 
 A aplicação estará rodando na porta 8000 e pode ser acessada em [localhost:8000](http://127.0.0.1:8000).
+
+## Contribuindo
+Sinta-se a vontade quanto a sugerir mudanças, novas funcionalidades, reportar bugs ou enviar um pull request, para isso basta verificar o arquivo [CONTRIBUTING](CONTRIBUTING.md) para conhecer mais sobre esse processo.
+
+## Licença
+Esse projeto é licenciado nos termos da licença [MIT](https://choosealicense.com/licenses/mit/).
+
