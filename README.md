@@ -56,7 +56,7 @@ npm install
 #### Executando o projeto
 Agora está tudo pronto para rodar o projeto. Primeiro compile o JavaScript, css, e demais recursos:
 ```bash
-sudo npm run dev
+npm run dev
 ```
 
 Em seguide inicie o servidor Laravel:
