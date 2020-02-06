@@ -1,0 +1,39 @@
+.card {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+input {
+    height: 45px !important;
+}
+
+input:focus {
+    box-shadow: 0 0 0 0.2rem #00693e82 !important;
+    outline-color: #00693e;
+    outline-style: auto;
+}
+
+button {
+    width: 100%;
+    height: 45px;
+    border-radius: 2px;
+    background-color: $dark-green !important;
+    color: $white !important;
+    font-size: large;
+    border-radius: 2px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+button:hover {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    background-color: $dark-green-alpha !important;
+}
+
+a.text-success {
+    color: $dark-green !important;
+    text-decoration: none;
+}
+
+body {
+    background-color: white;
+}
