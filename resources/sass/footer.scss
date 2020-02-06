@@ -1,0 +1,46 @@
+@import 'variables';
+
+.main {
+    min-height: calc(100vh - 11.5rem);
+}
+
+@include media-breakpoint-only(xs) {
+    .main {
+        min-height: calc(100vh - 22rem);
+    }
+}
+
+@include media-breakpoint-only(sm) {
+    .main {
+        min-height: calc(100vh - 18rem);
+    }
+}
+
+.footer {
+    background-color: $primary;
+    color: $light;
+
+    padding: 1rem;
+    width: 100%;
+    height: auto;
+    min-height: 2rem;
+    box-shadow: $box-shadow-md-reverse;
+
+    .footer__logo {
+        font-size: 1.2rem;
+    }
+
+    .footer__nav {
+        display: flex;
+        flex-direction: column;
+
+        .footer__nav-title {
+            font-size: 1.2rem;
+        }
+
+        .footer__link {
+            text-decoration: none;
+            color: $light;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+@import 'variables';
+
+.navbar {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    position: static;
+    // top: 150;
+    display: flex;
+    box-shadow: $box-shadow-md;
+
+    * {
+        vertical-align: middle;
+    }
+
+    .header__title {
+        text-align: center;
+        color: $light;
+        font-size: 2rem;
+    }
+
+    .header__user-section {
+        float: right;
+
+        a {
+            text-decoration: none;
+        }
+
+        .header__logout {
+            color: $light;
+        }
+    }
+}
