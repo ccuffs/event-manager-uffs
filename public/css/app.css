@@ -8752,7 +8752,7 @@ button.bg-dark:focus {
 }
 
 .shadow-sm {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 2px rgba(0, 0, 0, 0.23) !important;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
 .shadow {
@@ -11363,7 +11363,7 @@ a.text-dark:focus {
   position: static;
   display: -webkit-box;
   display: flex;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.23);
 }
 
 .navbar * {
@@ -11411,7 +11411,7 @@ a.text-dark:focus {
   width: 100%;
   height: auto;
   min-height: 2rem;
-  box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.16), 0 -3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 -3px 6px 0 rgba(0, 0, 0, 0.16), 0 -3px 6px 0 rgba(0, 0, 0, 0.23);
 }
 
 .footer .footer__logo {

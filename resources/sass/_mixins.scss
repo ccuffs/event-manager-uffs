@@ -1,14 +1,23 @@
 @mixin box-shadow($variant, $reverse: false) {
+    $shadowHOffset: 0;
     $shadowVOffset: 1px;
     $shadowBlur: 3px;
+    $shadowSpread: 0;
 
     @if $variant == md {
         $shadowVOffset: 3px;
         $shadowBlur: 6px;
 
     } @else if $variant == lg {
-        $shadowVOffset: 1px;
-        $shadowBlur: 3px;    
+        $shadowVOffset: 3px;
+        $shadowBlur: 8px;
+        $shadowSpread: 1px;
     }
 
+    @if $reverse {
+        $shadowVOffset: $shadowVOffset * -1;
+    }
+
+    box-shadow: $shadowHOffset $shadowVOffset $shadowBlur $shadowSpread rgba(0, 0, 0, 0.16),
+                $shadowHOffset $shadowVOffset $shadowBlur $shadowSpread rgba(0, 0, 0, 0.23);
 }
