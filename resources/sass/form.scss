@@ -1,39 +1,58 @@
-.card {
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
-}
+@mixin card-content {
 
-input {
-    height: 45px !important;
-}
-
-input:focus {
-    box-shadow: 0 0 0 0.2rem #00693e82 !important;
-    outline-color: #00693e;
-    outline-style: auto;
-}
-
-button {
     width: 100%;
-    height: 45px;
-    border-radius: 2px;
-    background-color: $dark-green !important;
+    height: 45px !important;
+    border-radius: 2px !important;
     color: $white !important;
-    font-size: large;
-    border-radius: 2px;
+    
+}
+
+.card__shadow {
+    
+    box-shadow: $card-shadow;
+
+}
+
+.card__input {
+    
+    @include card-content;
+    
+}
+
+
+.card__input:focus, .card__btn:focus {
+    
+    box-shadow: $input-btn-focus-shadow !important;
+    border-color: $dark-green-clear;
+
+}
+
+.card__btn {
+    
+    @include card-content;
+
     font-weight: 600;
     letter-spacing: 2px;
+    font-size: $font-size-lg;
+    box-shadow: $btn-box-shadow;
+    background-color: $dark-green !important;
+
 }
 
-button:hover {
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
-    background-color: $dark-green-alpha !important;
+.card__btn:hover {
+
+    background-color: $dark-green-light !important;
+
 }
 
-a.text-success {
+.card__action {
+    
     color: $dark-green !important;
-    text-decoration: none;
+
 }
 
-body {
-    background-color: white;
+.card__action:hover {
+
+    text-decoration: none;
+
 }
