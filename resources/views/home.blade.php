@@ -26,6 +26,18 @@
 
     {{-- Main --}}
     <main class="main">
+        <base-card
+            action-card
+        ></base-card>
+
+        <base-card
+            title="Nome do Evento"
+            date="21/04/2020"
+            caard-image="http://uffs.cc/sacc/img/banner.jpg"  
+            description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        ></base-card>
+
+
     </main>
 
     {{-- Footer --}}

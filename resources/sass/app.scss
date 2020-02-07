@@ -1,5 +1,6 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 // Variables
 @import 'variables';
@@ -9,4 +10,7 @@
 
 // Custom styles
 @import 'header';
+@import 'main';
 @import 'footer';
+
+@import 'card';
