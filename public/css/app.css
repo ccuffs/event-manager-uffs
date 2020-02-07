@@ -11366,45 +11366,41 @@ a.text-dark:focus {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.23);
 }
 
-.navbar * {
-  vertical-align: middle;
-}
-
-.navbar .header__title {
+.navbar__title {
   text-align: center;
   color: #f8f9fa;
   font-size: 2rem;
 }
 
-.navbar .header__user-section {
+.navbar__user-section {
   float: right;
 }
 
-.navbar .header__user-section a {
+.navbar__user-section a {
   text-decoration: none;
 }
 
-.navbar .header__user-section .header__logout {
+.navbar__logout {
   color: #f8f9fa;
 }
 
-.main {
+.app-main {
   min-height: calc(100vh - 11.5rem);
 }
 
 @media (max-width: 575.98px) {
-  .main {
+  .app-main {
     min-height: calc(100vh - 22rem);
   }
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .main {
+  .app-main {
     min-height: calc(100vh - 18rem);
   }
 }
 
-.footer {
+.app-footer {
   background-color: #249e63;
   color: #f8f9fa;
   padding: 1rem;
@@ -11414,11 +11410,11 @@ a.text-dark:focus {
   box-shadow: 0 -3px 6px 0 rgba(0, 0, 0, 0.16), 0 -3px 6px 0 rgba(0, 0, 0, 0.23);
 }
 
-.footer .footer__logo {
+.app-footer__logo {
   font-size: 1.2rem;
 }
 
-.footer .footer__nav {
+.app-footer__nav {
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
@@ -11426,11 +11422,11 @@ a.text-dark:focus {
           flex-direction: column;
 }
 
-.footer .footer__nav .footer__nav-title {
+.app-footer__nav-title {
   font-size: 1.2rem;
 }
 
-.footer .footer__nav .footer__link {
+.app-footer__link {
   text-decoration: none;
   color: #f8f9fa;
 }

@@ -1,23 +1,19 @@
 @import 'variables';
 @import 'mixins';
 
-.main {
+.app-main {
     min-height: calc(100vh - 11.5rem);
-}
 
-@include media-breakpoint-only(xs) {
-    .main {
+    @include media-breakpoint-only(xs) {
         min-height: calc(100vh - 22rem);
     }
-}
 
-@include media-breakpoint-only(sm) {
-    .main {
+    @include media-breakpoint-only(sm) {
         min-height: calc(100vh - 18rem);
     }
 }
 
-.footer {
+.app-footer {
     background-color: $primary;
     color: $light;
 
@@ -27,21 +23,21 @@
     min-height: 2rem;
     @include box-shadow(md, true);
 
-    .footer__logo {
+    &__logo {
         font-size: 1.2rem;
     }
 
-    .footer__nav {
+    &__nav {
         display: flex;
         flex-direction: column;
 
-        .footer__nav-title {
+        &-title {
             font-size: 1.2rem;
         }
+    }
 
-        .footer__link {
-            text-decoration: none;
-            color: $light;
-        }
+    &__link {
+        text-decoration: none;
+        color: $light;
     }
 }

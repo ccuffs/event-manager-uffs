@@ -10,25 +10,22 @@
     display: flex;
     @include box-shadow(md);
 
-    * {
-        vertical-align: middle;
-    }
-
-    .header__title {
+    &__title {
         text-align: center;
         color: $light;
         font-size: 2rem;
     }
 
-    .header__user-section {
+    &__user-section {
         float: right;
 
         a {
             text-decoration: none;
         }
 
-        .header__logout {
-            color: $light;
-        }
+    }
+
+    &__logout {
+        color: $light;
     }
 }
