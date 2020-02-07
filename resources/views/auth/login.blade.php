@@ -8,7 +8,7 @@
                 <div class="card mt-5 card__shadow">
                     <div class="card-body">
                         
-                        <div class="media text-center">
+                        <div class="media">
                             <img src="{{ asset('/img/logo_uffs.png') }}" class="img-fluid" alt="logo_uffs">
                         </div>
 
