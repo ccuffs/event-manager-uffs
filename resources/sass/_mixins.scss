@@ -1,0 +1,14 @@
+@mixin box-shadow($variant, $reverse: false) {
+    $shadowVOffset: 1px;
+    $shadowBlur: 3px;
+
+    @if $variant == md {
+        $shadowVOffset: 3px;
+        $shadowBlur: 6px;
+
+    } @else if $variant == lg {
+        $shadowVOffset: 1px;
+        $shadowBlur: 3px;    
+    }
+
+}
