@@ -1,4 +1,4 @@
-@mixin box-shadow($variant, $reverse: false) {
+@mixin box-shadow($variant: sm, $reverse: false) {
     $shadowHOffset: 0;
     $shadowVOffset: 1px;
     $shadowBlur: 3px;
