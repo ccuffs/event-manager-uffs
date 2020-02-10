@@ -3,6 +3,11 @@
 
 // Variables
 @import 'variables';
+@import 'mixins';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// Custom styles
+@import 'layouts/header';
+@import 'layouts/footer';

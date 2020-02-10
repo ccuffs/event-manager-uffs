@@ -1,0 +1,43 @@
+@import 'variables';
+@import 'mixins';
+
+.app-main {
+    min-height: calc(100vh - 11.5rem);
+
+    @include media-breakpoint-only(xs) {
+        min-height: calc(100vh - 22rem);
+    }
+
+    @include media-breakpoint-only(sm) {
+        min-height: calc(100vh - 18rem);
+    }
+}
+
+.app-footer {
+    background-color: $primary;
+    color: $light;
+
+    padding: 1rem;
+    width: 100%;
+    height: auto;
+    min-height: 2rem;
+    @include box-shadow(md, true);
+
+    &__logo {
+        font-size: 1.2rem;
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+
+        &-title {
+            font-size: 1.2rem;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $light;
+    }
+}
