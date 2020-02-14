@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 
 .navbar {
     width: 100%;
@@ -7,27 +8,24 @@
     position: static;
     // top: 150;
     display: flex;
-    box-shadow: $box-shadow-md;
+    @include box-shadow(md);
 
-    * {
-        vertical-align: middle;
-    }
-
-    .header__title {
+    &__title {
         text-align: center;
         color: $light;
         font-size: 2rem;
     }
 
-    .header__user-section {
+    &__user-section {
         float: right;
 
         a {
             text-decoration: none;
         }
 
-        .header__logout {
-            color: $light;
-        }
+    }
+
+    &__logout {
+        color: $light;
     }
 }

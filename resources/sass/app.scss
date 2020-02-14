@@ -4,13 +4,14 @@
 
 // Variables
 @import 'variables';
+@import 'mixins';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
 // Custom styles
-@import 'header';
-@import 'main';
-@import 'footer';
+@import 'layouts/header';
+@import 'layouts/main';
+@import 'layouts/footer';
 
 @import 'card';
