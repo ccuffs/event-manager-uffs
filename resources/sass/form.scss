@@ -8,7 +8,8 @@
 }
 
 .card__shadow {
-    
+
+    @extend .card, .mt-5; 
     box-shadow: $card-shadow;
 
 }
@@ -16,6 +17,9 @@
 .card__input {
     
     @include card-content;
+    @extend .form-control;
+    color: $input-color !important;
+    font-size: larger;
     
 }
 
@@ -47,6 +51,7 @@
 
 .card__action {
     
+    @extend .text-success;
     color: $dark-green !important;
 
 }
