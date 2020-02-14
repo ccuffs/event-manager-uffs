@@ -11580,7 +11580,6 @@ a.text-dark:focus {
   left: 0;
   padding: inherit;
   border-radius: 0.6rem;
-  box-shadow: 0 -3px 6px 0 rgba(0, 0, 0, 0.16), 0 -3px 6px 0 rgba(0, 0, 0, 0.23);
   width: 100%;
   max-height: 0;
   background-color: rgba(0, 0, 0, 0.38);

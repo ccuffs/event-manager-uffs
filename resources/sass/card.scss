@@ -94,7 +94,6 @@ $card-border-radius: 0.6rem;
         left: 0;
         padding: inherit;
         border-radius: $card-border-radius;
-        @include box-shadow(md, true);
         width: 100%;
         max-height: 0;
 
