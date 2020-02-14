@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/icon?family=Material+Icons);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
@@ -11385,6 +11385,49 @@ a.text-dark:focus {
 }
 
 .app-main {
+  display: -webkit-box;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.app-main > * {
+  margin: 0.6rem 0;
+}
+
+@media (max-width: 575.98px) {
+  .app-main {
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .app-main {
+    padding: 1rem 2rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .app-main {
+    padding: 2rem 3rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .app-main {
+    padding: 2rem 5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .app-main {
+    padding: 2rem 10rem;
+  }
+}
+
+.app-main {
   min-height: calc(100vh - 11.5rem);
 }
 
@@ -11429,5 +11472,150 @@ a.text-dark:focus {
 .app-footer__link {
   text-decoration: none;
   color: #f8f9fa;
+}
+
+.card {
+  border-radius: 0.6rem;
+  width: 23rem;
+  height: 30rem;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.16), 0 3px 8px 1px rgba(0, 0, 0, 0.23);
+  padding: 0;
+  border: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  color: #f8f9fa;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.card > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card__image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  border: 0;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+@media (max-width: 767.98px) {
+  .card__image {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.card:hover .card__image {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.card__content,
+.card__action {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  background-image: radial-gradient(circle closest-corner, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6));
+  -webkit-transition: background-image 0.2s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.card__action {
+  display: table;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 2rem;
+}
+
+.card__action > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.card__action:active {
+  background-color: rgba(47, 47, 47, 0.26);
+}
+
+.card__icon {
+  font-size: 4rem;
+}
+
+.card__title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.card__details {
+  position: absolute;
+  max-height: 0;
+  bottom: -2rem;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.card__controls {
+  position: absolute;
+  bottom: -2rem;
+  left: 0;
+  padding: inherit;
+  border-radius: 0.6rem;
+  width: 100%;
+  max-height: 0;
+  background-color: rgba(0, 0, 0, 0.38);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 767.98px) {
+  .card__controls {
+    bottom: 0;
+    max-height: 5rem;
+  }
+}
+
+.card:hover .card__controls {
+  max-height: 15rem;
+  bottom: 0;
+}
+
+.card__date {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+@media (max-width: 767.98px) {
+  .card__date {
+    bottom: 4rem;
+  }
+}
+
+.card:hover .card__date {
+  bottom: 4rem;
 }
 

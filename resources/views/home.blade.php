@@ -26,6 +26,8 @@
 
     {{-- Main --}}
     <main class="app-main">
+        <base-card>
+        </base-card>
     </main>
 
     {{-- Footer --}}
