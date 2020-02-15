@@ -1,63 +1,6 @@
-@mixin card-content {
+@mixin form-content-focus {
 
-    width: 100%;
-    height: 45px !important;
-    border-radius: 2px !important;
-    color: $white !important;
-    
-}
-
-.card__shadow {
-
-    @extend .card, .mt-5; 
-    box-shadow: $card-shadow;
-
-}
-
-.card__input {
-    
-    @include card-content;
-    @extend .form-control;
-    color: $input-color !important;
-    font-size: larger;
-    
-}
-
-
-.card__input:focus, .card__btn:focus {
-    
     box-shadow: $input-btn-focus-shadow !important;
     border-color: $dark-green-clear;
-
-}
-
-.card__btn {
     
-    @include card-content;
-
-    font-weight: 600;
-    letter-spacing: 2px;
-    font-size: $font-size-lg;
-    box-shadow: $btn-box-shadow;
-    background-color: $dark-green !important;
-
-}
-
-.card__btn:hover {
-
-    background-color: $dark-green-light !important;
-
-}
-
-.card__action {
-    
-    @extend .text-success;
-    color: $dark-green !important;
-
-}
-
-.card__action:hover {
-
-    text-decoration: none;
-
 }

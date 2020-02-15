@@ -1,0 +1,12 @@
+.text-input {
+    
+    @extend .form-control;
+    color: #5d5d5d;
+
+}
+
+.text-input:focus {
+
+    @include form-content-focus;
+
+}

@@ -20,9 +20,9 @@
                             <input type="password" class="card__input" placeholder="Senha">
                         </div>
                         
-                        <button type="button" class="btn mt-4 mb-3 card__btn">ENTRAR</button>
+                        <button type="button" class="card__btn">ENTRAR</button>
                         
-                        <a href="https://id.uffs.edu.br/id/XUI/?realm=/#forgotUsername/" target="_blank" class="card__action mt-2"> Não sabe seu IdUFFS? </a>
+                        <a href="https://id.uffs.edu.br/id/XUI/?realm=/#forgotUsername/" target="_blank" class="card__action"> Não sabe seu IdUFFS? </a>
                         
                         <a href="#" target="_blank" class="card__action mx-2"> Esqueceu seu senha? </a>
                         
