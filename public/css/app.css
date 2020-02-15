@@ -11356,31 +11356,74 @@ a.text-dark:focus {
   }
 }
 
-.navbar {
+.header {
   width: 100%;
-  height: auto;
-  padding: 1rem;
-  position: static;
+  height: 100vh;
+  position: relative;
+  background-image: url("http://uffs.cc/sacc/img/banner.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header__container {
+  width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: flex;
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.23);
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(23, 97, 61, 0.4)), to(rgba(44, 194, 121, 0.1)));
+  background-image: linear-gradient(to bottom right, rgba(23, 97, 61, 0.4), rgba(44, 194, 121, 0.1));
 }
 
-.navbar__title {
+.header__content {
+  width: 100%;
+  height: 75%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.header__title {
   text-align: center;
   color: #f8f9fa;
-  font-size: 2rem;
+  font-size: 4rem;
 }
 
-.navbar__user-section {
+.header__svg {
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.header__svg path {
+  fill: #f8f9fa;
+  stroke: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.header__user-section {
   float: right;
 }
 
-.navbar__user-section a {
+.header__user-section a {
   text-decoration: none;
 }
 
-.navbar__logout {
+.header__logout {
   color: #f8f9fa;
 }
 
@@ -11617,5 +11660,40 @@ a.text-dark:focus {
 
 .card:hover .card__date {
   bottom: 4rem;
+}
+
+.navbar {
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  position: static;
+  opacity: 0;
+  display: -webkit-box;
+  display: flex;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.23);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.navbar__sticky {
+  opacity: 1;
+}
+
+.navbar__title {
+  text-align: center;
+  color: #f8f9fa;
+  font-size: 2rem;
+}
+
+.navbar__user-section {
+  float: right;
+}
+
+.navbar__user-section a {
+  text-decoration: none;
+}
+
+.navbar__logout {
+  color: #f8f9fa;
 }
 
