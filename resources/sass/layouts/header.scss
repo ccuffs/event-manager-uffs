@@ -72,22 +72,5 @@ z";
             transition: 0.2s;
         }
 
-
-        // &:hover path {
-        //     d: path($end-path);
-        // }
-    }
-
-    &__user-section {
-        float: right;
-
-        a {
-            text-decoration: none;
-        }
-
-    }
-
-    &__logout {
-        color: $light;
     }
 }

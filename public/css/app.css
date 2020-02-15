@@ -11415,18 +11415,6 @@ a.text-dark:focus {
   transition: 0.2s;
 }
 
-.header__user-section {
-  float: right;
-}
-
-.header__user-section a {
-  text-decoration: none;
-}
-
-.header__logout {
-  color: #f8f9fa;
-}
-
 .app-main {
   display: -webkit-box;
   display: flex;
