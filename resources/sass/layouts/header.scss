@@ -1,0 +1,31 @@
+@import 'variables';
+@import 'mixins';
+
+.navbar {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    position: static;
+    // top: 150;
+    display: flex;
+    @include box-shadow(md);
+
+    &__title {
+        text-align: center;
+        color: $light;
+        font-size: 2rem;
+    }
+
+    &__user-section {
+        float: right;
+
+        a {
+            text-decoration: none;
+        }
+
+    }
+
+    &__logout {
+        color: $light;
+    }
+}
