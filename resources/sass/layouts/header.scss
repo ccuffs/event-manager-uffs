@@ -1,31 +1,76 @@
 @import 'variables';
 @import 'mixins';
 
-.navbar {
+$original-path: "M -5,50\
+S 0,90 25,90\
+S 50,50 75,50\
+S 100,50 125,50\
+L 100,100\
+L 0,100\
+z";
+
+$end-path: "M -5,50\
+S 0,25 25,25\
+S 50,90 75,90\
+S 100,90 125,90\
+L 100,100\
+L 0,100\
+z";
+
+.header {
     width: 100%;
-    height: auto;
-    padding: 1rem;
-    position: static;
-    // top: 150;
-    display: flex;
-    @include box-shadow(md);
+    height: 100vh;
+    position: relative;
+
+    background-image: url("http://uffs.cc/sacc/img/banner.jpg");
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-image: linear-gradient(
+            to bottom right,
+            rgba(23, 97, 61, 0.4),
+            rgba(44, 194, 121, 0.1));
+    }
+
+    &__content {
+        width: 100%;
+        height: 75%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     &__title {
         text-align: center;
         color: $light;
-        font-size: 2rem;
+        font-size: 4rem;
     }
 
-    &__user-section {
-        float: right;
+    &__svg {
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 99;
 
-        a {
-            text-decoration: none;
+        path {
+            fill: $light;
+            stroke: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: 0.2s;
         }
 
-    }
-
-    &__logout {
-        color: $light;
     }
 }
