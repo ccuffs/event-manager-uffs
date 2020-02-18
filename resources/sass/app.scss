@@ -9,6 +9,12 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+@import 'form';
+@import 'button';
+@import 'action';
+
+@import 'login';
+
 // Custom styles
 @import 'layouts/header';
 @import 'layouts/main';
