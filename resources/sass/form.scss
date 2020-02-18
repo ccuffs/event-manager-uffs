@@ -1,6 +1,19 @@
-@mixin form-content-focus {
+%form-content-focus {
 
     box-shadow: $input-btn-focus-shadow !important;
-    border-color: $dark-green-clear;
+    border-color: theme-color-level(primary, -5);
     
+}
+
+.text-input {
+    
+    @extend .form-control;
+    color: #5d5d5d;
+
+}
+
+.text-input:focus {
+
+    @extend %form-content-focus;
+
 }

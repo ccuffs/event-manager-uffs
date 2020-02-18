@@ -19,10 +19,8 @@ $teal: #4dc0b5;
 $cyan: #6cb2eb;
 $white: #fff;
 $black: #000;
-$dark-green: #00693E;
-$dark-green-light: #00693dcc;
-$dark-green-clear:#51997b87; 
+$primary: #249e63;
 
 $card-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 $btn-box-shadow: $card-shadow;
-$input-btn-focus-shadow: 0 0 0 .2rem $dark-green-clear !default;
+$input-btn-focus-shadow: 0 0 0 .2rem theme-color-level(primary, -1) !default;
