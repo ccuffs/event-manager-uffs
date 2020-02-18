@@ -2,27 +2,8 @@
 
 @section('content')
     {{-- Header --}}
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <div class="mx-auto order-0">
-                <p class="navbar__title">Event Manager UFFS</p>
-            </div>
-
-            <div class="order-3">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-user-section" aria-controls="navbar-user-section" aria-expanded="false">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbar-user-section">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Sair</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <base-header>
+    </base-header>
 
     {{-- Main --}}
     <main class="app-main">
@@ -55,5 +36,7 @@
 
         </div>
     </footer>
+
+
 
 @endsection
