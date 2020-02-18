@@ -1,23 +1,42 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+    {{-- Header --}}
+    <base-header>
+    </base-header>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+    {{-- Main --}}
+    <main class="app-main">
+        <base-card>
+        </base-card>
+    </main>
 
-                    You are logged in!
+    {{-- Footer --}}
+    <footer class="app-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="app-footer__logo">
+                        Desenvolvido pela FronteiraTec
+                    </div>
                 </div>
+
+                <div class="col-md-6">
+                    <div class="app-footer__nav">
+                        <div class="app-footer__nav-title">
+                            Links úteis
+                        </div>
+
+                        <a href="http://cc.uffs.edu.br/" class="app-footer__link">CC UFFS</a>
+                    </div>
+                </div>
+
+
             </div>
+
         </div>
-    </div>
-</div>
+    </footer>
+
+
+
 @endsection

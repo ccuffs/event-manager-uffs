@@ -1,16 +1,24 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 // Variables
 @import 'variables';
+@import 'mixins';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
 @import 'form';
-
 @import 'button';
-
 @import 'action';
 
 @import 'login';
+
+// Custom styles
+@import 'layouts/header';
+@import 'layouts/main';
+@import 'layouts/footer';
+
+@import 'card';
+@import 'navbar';
