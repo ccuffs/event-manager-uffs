@@ -2,8 +2,8 @@
     <div class="card">
         <img :src="cardImage" class="card__image">
 
-        <a v-if="actionCard" class="card__action" :href="destinationUrl">
-            <div class="">
+        <a v-if="actionCard" class="card__action" :href="destinationUrl" :data-toggle="modalTrigger ? '' : 'modal'" :data-target="modalTarget">
+            <div>
                 <p class="card__icon">+</p>
                 <p>Novo Evento</p>
             </div>
@@ -50,6 +50,16 @@ export default {
         "actionCard": {
             type: Boolean,
             default: false,
+        },
+
+        "modalTrigger": {
+            type: Boolean,
+            default: false,
+        },
+
+        "modalTarget": {
+            type: String,
+            default: '',
         },
 
         "destinationUrl": {
