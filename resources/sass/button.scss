@@ -1,0 +1,19 @@
+.btn {
+
+    @extend .btn;
+    box-shadow: $btn-box-shadow;
+
+}
+
+.btn:focus {
+
+    @extend %form-content-focus;
+
+}
+
+.btn:hover {
+
+    background-color: theme-color-level(primary, 2) !important;
+    color: $white;
+
+}

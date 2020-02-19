@@ -21,6 +21,7 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('base-card', require('./components/BaseCard.vue').default);
+Vue.component('base-header', require('./components/BaseHeader.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
