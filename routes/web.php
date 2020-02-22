@@ -18,4 +18,8 @@ Route::get('/', function() {
     return  view('home');
 });
 
+Route::get('/editor', function() {
+    return view('editor');
+});
+
 // Route::get('/', 'HomeController@index')->name('home');
