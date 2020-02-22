@@ -11584,19 +11584,16 @@ a.text-dark:focus {
   color: #fff;
 }
 
-.card__action:hover {
-  color: #249e63;
-}
-
 .header {
   width: 100%;
   height: 100vh;
   position: relative;
-  background-image: url("http://uffs.cc/sacc/img/banner.jpg");
+  background-image: url("/img/banner.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  z-index: 0;
 }
 
 .header__container {
@@ -11635,7 +11632,7 @@ a.text-dark:focus {
   position: absolute;
   bottom: 0;
   left: 0;
-  z-index: 99;
+  z-index: 2;
 }
 
 .header__svg path {
@@ -11645,6 +11642,11 @@ a.text-dark:focus {
   stroke-linejoin: round;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+
+.header + .navbar {
+  margin-top: -1rem;
+  z-index: 1100 !important;
 }
 
 .app-main {
@@ -11906,7 +11908,7 @@ a.text-dark:focus {
 
 .navbar__title {
   text-align: center;
-  color: #f8f9fa;
+  color: #249e63;
   font-size: 2rem;
 }
 
@@ -11919,6 +11921,47 @@ a.text-dark:focus {
 }
 
 .navbar__logout {
+  color: #f8f9fa;
+}
+
+.modal {
+  /* dark variant */
+}
+
+.modal-content {
+  border-radius: 0.6rem;
+}
+
+.modal-header {
+  border-top-left-radius: 0.6rem;
+  border-top-right-radius: 0.6rem;
+}
+
+.modal-footer {
+  border-bottom-left-radius: 0.6rem;
+  border-bottom-right-radius: 0.6rem;
+}
+
+.modal .close {
+  outline: none;
+}
+
+.modal--dark .modal-content {
+  background-color: #343a40;
+}
+
+.modal--dark .modal-header {
+  background-color: #343a40;
+  color: #f8f9fa;
+}
+
+.modal--dark .modal-body {
+  background-color: #dee2e6;
+  color: #343a40;
+}
+
+.modal--dark .modal-footer {
+  background-color: #343a40;
   color: #f8f9fa;
 }
 
