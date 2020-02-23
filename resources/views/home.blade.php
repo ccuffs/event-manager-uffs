@@ -7,8 +7,37 @@
 
     {{-- Main --}}
     <main class="app-main">
-        <base-card>
-        </base-card>
+        <button type="button" class="btn btn--primary">
+            Button Primary
+        </button>
+
+        <button type="button" class="btn btn--info btn--small">
+            Button Small
+        </button>
+
+        <button type="button" class="btn btn--info btn--large">
+            Button Large
+        </button>
+
+        <button type="button" class="btn btn--dark">
+            Button Dark
+        </button>
+
+        <button type="button" class="btn btn--danger btn--shadow-md">
+            Button Danger Shadow md
+        </button>
+
+        <button type="button" class="btn btn--primary-gradient">
+            Button Primary Gradient
+        </button>
+
+        <button type="button" class="btn btn--primary-outline">
+            Button Primary Outline
+        </button>
+
+        <button type="button" class="btn btn--secondary btn--full">
+            Button Full Width
+        </button>
     </main>
 
     {{-- Footer --}}
