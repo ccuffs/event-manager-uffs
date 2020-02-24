@@ -15,11 +15,11 @@ class CreateUser extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('login');
+            $table->string('username');
+            $table->string('uid')->unique();
             $table->string('cpf')->nullable();
             $table->string('name');
             $table->string('email');
-            $table->string('registration');
             $table->timestamps();
         });
     }
