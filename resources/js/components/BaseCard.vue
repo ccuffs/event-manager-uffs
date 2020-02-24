@@ -2,38 +2,67 @@
     <div class="card">
         <img :src="cardImage" class="card__image">
 
-        <a v-if="actionCard" class="card__action" :href="destinationUrl">
+        <a v-if="actionCard" class="card--action" :href="destinationUrl">
             <div class="">
-                <p class="card__icon">+</p>
+                <p class="card__icon">
+                    <i class="material-icons">add_circle</i>
+                </p>
                 <p>Novo Evento</p>
             </div>
         </a>
 
-        <a v-else class="card__content" :href="destinationUrl">
-            <p class="card__title">
-                {{ title }}
-            </p>
+        <a v-else class="card--content" :href="destinationUrl">
+            <svg class="card__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="none">
+                <path
+                    class="card__line-fill"
+                    d="
+                        M 0,100
+                        Q 50,200,100,250
+                        Q 250,400,350,300
+                        C 400,250,550,150,650,300
+                        Q 750,450,800,400
+                        L 800,450
+                        L 0,450
+                    "/>
 
-            <p class="card__description">
-                {{ description }}
-            </p>
+                <path
+                    class="card__line"
+                    d="
+                        M 0,100
+                        Q 50,200,100,250
+                        Q 250,400,350,300
+                        C 400,250,550,150,650,300
+                        Q 750,450,800,400
+                    "
+                />
+            </svg>
 
-            <p class="card__date">
-                {{ date }}
-            </p>
+            <div class="card__body">
+                <p class="card__title">
+                    {{ title }}
+                </p>
+
+                <p class="card__description">
+                    {{ description }}
+                </p>
+
+                <p class="card__date">
+                    {{ date }}
+                </p>
+            </div>
 
             <div class="card__controls">
-                <div class="btn-group">
-                    <a href="#" class="btn btn-outline-primary">
+                <!-- <div class="btn-group">
+                    <a href="#" class="btn btn--outline-primary">
                         <span>Visualizar</span>
                     </a>
-                    <a href="#" class="btn btn-outline-success">
+                    <a href="#" class="btn btn--outline-success">
                         <span>Editar</span>
                     </a>
-                    <a href="#" class="btn btn-outline-danger">
+                    <a href="#" class="btn btn--outline-danger">
                         <span>Excluir</span>
                     </a>
-                </div>
+                </div> -->
             </div>
         </a>
     </div>
