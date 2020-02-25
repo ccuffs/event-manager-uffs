@@ -1973,6 +1973,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     "cardImage": {
@@ -1982,6 +2021,21 @@ __webpack_require__.r(__webpack_exports__);
     "actionCard": {
       type: Boolean,
       "default": false
+    },
+    "paperCard": {
+      type: Boolean,
+      "default": false
+    },
+    "variant": {
+      type: String
+    },
+    "shadow": {
+      type: String,
+      "default": "small"
+    },
+    "padding": {
+      type: String,
+      "default": "small"
     },
     "destinationUrl": {
       type: String,
@@ -1995,6 +2049,17 @@ __webpack_require__.r(__webpack_exports__);
     },
     "date": {
       type: String
+    }
+  },
+  computed: {
+    paperCardVariantClass: function paperCardVariantClass() {
+      return "card--paper-" + this.variant;
+    },
+    cardShadowClass: function cardShadowClass() {
+      return "card__shadow--" + this.shadow;
+    },
+    paperCardPaddingClass: function paperCardPaddingClass() {
+      return "card--padding-" + this.padding;
     }
   }
 });
@@ -6661,7 +6726,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card__controls .btn-group[data-v-939adb28] {\n    width: 100%;\n    display: -webkit-box;\n    display: flex;\n}\n\n", ""]);
+exports.push([module.i, "\n.btn-group[data-v-939adb28] {\n    width: 100%;\n}\n", ""]);
 
 // exports
 
@@ -34492,7 +34557,7 @@ return jQuery;
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(global) {/**!
  * @fileOverview Kickass library to create and place poppers near their reference elements.
- * @version 1.16.0
+ * @version 1.16.1
  * @license
  * Copyright (c) 2016 Federico Zivolo and contributors
  *
@@ -34838,7 +34903,7 @@ function getBordersSize(styles, axis) {
   var sideA = axis === 'x' ? 'Left' : 'Top';
   var sideB = sideA === 'Left' ? 'Right' : 'Bottom';
 
-  return parseFloat(styles['border' + sideA + 'Width'], 10) + parseFloat(styles['border' + sideB + 'Width'], 10);
+  return parseFloat(styles['border' + sideA + 'Width']) + parseFloat(styles['border' + sideB + 'Width']);
 }
 
 function getSize(axis, body, html, computedStyle) {
@@ -34993,8 +35058,8 @@ function getOffsetRectRelativeToArbitraryNode(children, parent) {
   var scrollParent = getScrollParent(children);
 
   var styles = getStyleComputedProperty(parent);
-  var borderTopWidth = parseFloat(styles.borderTopWidth, 10);
-  var borderLeftWidth = parseFloat(styles.borderLeftWidth, 10);
+  var borderTopWidth = parseFloat(styles.borderTopWidth);
+  var borderLeftWidth = parseFloat(styles.borderLeftWidth);
 
   // In cases where the parent is fixed, we must ignore negative scroll in offset calc
   if (fixedPosition && isHTML) {
@@ -35015,8 +35080,8 @@ function getOffsetRectRelativeToArbitraryNode(children, parent) {
   // differently when margins are applied to it. The margins are included in
   // the box of the documentElement, in the other cases not.
   if (!isIE10 && isHTML) {
-    var marginTop = parseFloat(styles.marginTop, 10);
-    var marginLeft = parseFloat(styles.marginLeft, 10);
+    var marginTop = parseFloat(styles.marginTop);
+    var marginLeft = parseFloat(styles.marginLeft);
 
     offsets.top -= borderTopWidth - marginTop;
     offsets.bottom -= borderTopWidth - marginTop;
@@ -35955,8 +36020,8 @@ function arrow(data, options) {
   // Compute the sideValue using the updated popper offsets
   // take popper margin in account because we don't have this info available
   var css = getStyleComputedProperty(data.instance.popper);
-  var popperMarginSide = parseFloat(css['margin' + sideCapitalized], 10);
-  var popperBorderSide = parseFloat(css['border' + sideCapitalized + 'Width'], 10);
+  var popperMarginSide = parseFloat(css['margin' + sideCapitalized]);
+  var popperBorderSide = parseFloat(css['border' + sideCapitalized + 'Width']);
   var sideValue = center - data.offsets.popper[side] - popperMarginSide - popperBorderSide;
 
   // prevent arrowElement from being placed not contiguously to its popper
@@ -38133,34 +38198,108 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "card" }, [
-    _c("img", { staticClass: "card__image", attrs: { src: _vm.cardImage } }),
-    _vm._v(" "),
-    _vm.actionCard
+  return _c("div", { class: ["card", _vm.cardShadowClass] }, [
+    _vm.paperCard
       ? _c(
-          "a",
-          { staticClass: "card__action", attrs: { href: _vm.destinationUrl } },
-          [_vm._m(0)]
+          "div",
+          {
+            class: [
+              "card--paper",
+              _vm.paperCardVariantClass,
+              _vm.paperCardPaddingClass
+            ]
+          },
+          [_vm._t("default")],
+          2
         )
-      : _c(
-          "a",
-          { staticClass: "card__content", attrs: { href: _vm.destinationUrl } },
-          [
-            _c("p", { staticClass: "card__title" }, [
-              _vm._v("\n            " + _vm._s(_vm.title) + "\n        ")
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card__description" }, [
-              _vm._v("\n            " + _vm._s(_vm.description) + "\n        ")
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card__date" }, [
-              _vm._v("\n            " + _vm._s(_vm.date) + "\n        ")
-            ]),
-            _vm._v(" "),
-            _vm._m(1)
-          ]
-        )
+      : _c("div", { staticClass: "card__container" }, [
+          _c("img", {
+            class: {
+              card__image: !_vm.actionCard,
+              "card--action__image": _vm.actionCard
+            },
+            attrs: { src: _vm.cardImage }
+          }),
+          _vm._v(" "),
+          _vm.actionCard
+            ? _c(
+                "a",
+                {
+                  staticClass: "card--action",
+                  attrs: { href: _vm.destinationUrl }
+                },
+                [_vm._m(0)]
+              )
+            : _c(
+                "a",
+                {
+                  staticClass: "card--content",
+                  attrs: { href: _vm.destinationUrl }
+                },
+                [
+                  _c(
+                    "svg",
+                    {
+                      staticClass: "card__svg",
+                      attrs: {
+                        xmlns: "http://www.w3.org/2000/svg",
+                        viewBox: "0 0 800 500",
+                        preserveAspectRatio: "none"
+                      }
+                    },
+                    [
+                      _c("path", {
+                        staticClass: "card__line-fill",
+                        attrs: {
+                          d:
+                            "\n                M 0,100\n                Q 50,200,100,250\n                Q 250,400,350,300\n                C 400,250,550,150,650,300\n                Q 750,450,800,400\n                L 800,450\n                L 0,450\n                "
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("path", {
+                        staticClass: "card__line",
+                        attrs: {
+                          d:
+                            "\n                M 0,100\n                Q 50,200,100,250\n                Q 250,400,350,300\n                C 400,250,550,150,650,300\n                Q 750,450,800,400\n                "
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card__body" }, [
+                    _c("div", { staticClass: "card__hidden" }, [
+                      _c("p", { staticClass: "card__description" }, [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(_vm.description) +
+                            "\n                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(1)
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card__show" }, [
+                      _c("p", { staticClass: "card__title" }, [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(_vm.title) +
+                            "\n                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card__subtitle" }, [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(_vm.date) +
+                            "\n                    "
+                        )
+                      ])
+                    ])
+                  ])
+                ]
+              )
+        ])
   ])
 }
 var staticRenderFns = [
@@ -38169,7 +38308,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", {}, [
-      _c("p", { staticClass: "card__icon" }, [_vm._v("+")]),
+      _c("p", { staticClass: "card__icon" }, [
+        _c("i", { staticClass: "material-icons" }, [_vm._v("add_circle")])
+      ]),
       _vm._v(" "),
       _c("p", [_vm._v("Novo Evento")])
     ])
@@ -38182,19 +38323,19 @@ var staticRenderFns = [
       _c("div", { staticClass: "btn-group" }, [
         _c(
           "a",
-          { staticClass: "btn btn-outline-primary", attrs: { href: "#" } },
+          { staticClass: "btn btn--outline-primary", attrs: { href: "#" } },
           [_c("span", [_vm._v("Visualizar")])]
         ),
         _vm._v(" "),
         _c(
           "a",
-          { staticClass: "btn btn-outline-success", attrs: { href: "#" } },
+          { staticClass: "btn btn--outline-success", attrs: { href: "#" } },
           [_c("span", [_vm._v("Editar")])]
         ),
         _vm._v(" "),
         _c(
           "a",
-          { staticClass: "btn btn-outline-danger", attrs: { href: "#" } },
+          { staticClass: "btn btn--outline-danger", attrs: { href: "#" } },
           [_c("span", [_vm._v("Excluir")])]
         )
       ])
@@ -50853,8 +50994,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/arufonsekun/Universidade/fronteira-tec/event-manager-uffs/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/arufonsekun/Universidade/fronteira-tec/event-manager-uffs/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/jean/Documents/Programming/FronteiraTec/event-manager-uffs/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/jean/Documents/Programming/FronteiraTec/event-manager-uffs/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
