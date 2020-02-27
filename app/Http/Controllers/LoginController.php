@@ -34,24 +34,29 @@ class LoginController extends Controller
         }
         $user = $this->getOrCreateUser($userData);
 
-        return $user;
-        Auth::login($user, true);
-
-        // return redirect()->intended('home');
+        Auth::login($user);
+        return redirect()->intended('home');
     }
 
     private function getOrCreateUser($data)
     {
         $user = User::where('uid', $data->uid)->first();
-        if ($user) return $user;
-
-        $user = User::create([
-            'username' => $data->username,
-            'uid' => $data->uid,
-            'email' => $data->email,
-            'name' => $data->name,
-            'cpf' => $data->cpf
-        ]);
+        if ($user) {
+            $user->update([
+                'username' => $data->username,
+                'email' => $data->email,
+                'name' => $data->name,
+                'cpf' => $data->cpf
+            ]);
+        } else {
+            $user = User::create([
+                'username' => $data->username,
+                'uid' => $data->uid,
+                'email' => $data->email,
+                'name' => $data->name,
+                'cpf' => $data->cpf
+            ]);
+        }
 
         return $user;
     }
