@@ -4,7 +4,7 @@
 
     <event-form>
     </event-form>
-    
+
     {{-- Header --}}
     <base-header>
         <header class="header">
@@ -29,7 +29,7 @@
             </div>
         </header>
 
-        <nav class="navbar navbar-expand-lg bg-light" id="stickyNavbar">
+        <nav class="navbar navbar-expand-lg bg-light navbar-light" id="stickyNavbar" ref="stickyNavbar">
             <div class="mx-auto order-0">
                 <p class="navbar__title">Event Manager UFFS</p>
             </div>

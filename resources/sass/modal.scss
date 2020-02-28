@@ -24,23 +24,24 @@ $modal-border-radius: 0.6rem;
         outline: none;
     }
 
-    /* dark variant */
-    &--dark &-content {
-        background-color: $dark;
-    }
+    @each $color, $value in $theme-colors {
+        .close {
+            color: color-yiq($value);
+        }
 
-    &--dark &-header {
-        background-color: $dark;
-        color: $light;
-    }
+        &--#{$color} &-content {
+            background-color: $value;
+        }
 
-    &--dark &-body {
-        background-color: $gray-300;
-        color: $dark;
-    }
+        &--#{$color} &-header,
+        &--#{$color} &-footer {
+            background-color: $value;
+            color: color-yiq($value);
+        }
 
-    &--dark &-footer {
-        background-color: $dark;
-        color: $light;
+        &--#{$color} &-body {
+            background-color: theme-color-level($color, -10);
+            color: color-yiq(theme-color-level($color, -10));
+        }
     }
 }

@@ -1985,7 +1985,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      eventName: '',
+      place: '',
+      description: '',
+      dateStart: '',
+      dateEnd: ''
+    };
+  },
   methods: {
     createEvent: function () {
       var _createEvent = _asyncToGenerator(
@@ -1997,21 +2007,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 data = {
-                  'event_name': document.getElementById('eventName').value,
-                  'place': document.getElementById('eventPlace').value,
-                  'description': document.getElementById('eventDescription').value,
-                  'dateStart': document.getElementById('eventDateStart').value,
-                  'dateEnd': document.getElementById('eventDateEnd').value
-                }; // await window.axios.post('/api/event', data);
-
-                window.location.replace('/editor');
+                  'eventName': this.eventName,
+                  'place': this.place,
+                  'description': this.description,
+                  'dateStart': this.dateStart,
+                  'dateEnd': this.dateEnd
+                };
+                console.log(data); // await window.axios.post('/api/event', data);
+                // window.location.replace('/editor');
 
               case 2:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee);
+        }, _callee, this);
       }));
 
       function createEvent() {
@@ -2086,33 +2096,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    "cardImage": {
+    cardImage: {
       type: String,
       "default": "https://www.showmetech.com.br/wp-content/uploads//2015/02/image_new-11.png"
     },
-    "actionCard": {
+    actionCard: {
       type: Boolean,
       "default": false
     },
-    "modalTrigger": {
+    modalTrigger: {
       type: Boolean,
       "default": false
     },
-    "modalTarget": {
+    modalTarget: {
       type: String,
       "default": ''
     },
-    "destinationUrl": {
+    destinationUrl: {
       type: String,
       "default": "#"
     },
-    "title": {
+    title: {
       type: String
     },
-    "description": {
+    description: {
       type: String
     },
-    "date": {
+    date: {
       type: String
     }
   }
@@ -2199,11 +2209,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    'modalid': {
+    modalId: {
       type: String,
       "default": 'modalId'
     },
-    'variant': {
+    variant: {
+      type: String
+    },
+    modalTitle: {
       type: String
     }
   },
@@ -38976,7 +38989,11 @@ var render = function() {
   return _c(
     "base-modal",
     {
-      attrs: { modalid: "createEventModal", variant: "dark" },
+      attrs: {
+        "modal-id": "createEventModal",
+        "modal-title": "Criar Novo Evento",
+        variant: "dark"
+      },
       on: { create: _vm.createEvent }
     },
     [
@@ -38986,8 +39003,25 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.eventName,
+              expression: "eventName"
+            }
+          ],
           staticClass: "form-control",
-          attrs: { type: "text", name: "eventName", id: "eventName" }
+          attrs: { type: "text", name: "eventName", id: "eventName" },
+          domProps: { value: _vm.eventName },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.eventName = $event.target.value
+            }
+          }
         })
       ]),
       _vm._v(" "),
@@ -38997,8 +39031,25 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.place,
+              expression: "place"
+            }
+          ],
           staticClass: "form-control",
-          attrs: { type: "text", name: "eventPlace", id: "eventPlace" }
+          attrs: { type: "text", name: "eventPlace", id: "eventPlace" },
+          domProps: { value: _vm.place },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.place = $event.target.value
+            }
+          }
         })
       ]),
       _vm._v(" "),
@@ -39008,8 +39059,29 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("textarea", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.description,
+              expression: "description"
+            }
+          ],
           staticClass: "form-control",
-          attrs: { name: "eventDescription", id: "eventDescription", rows: "3" }
+          attrs: {
+            name: "eventDescription",
+            id: "eventDescription",
+            rows: "3"
+          },
+          domProps: { value: _vm.description },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.description = $event.target.value
+            }
+          }
         })
       ]),
       _vm._v(" "),
@@ -39019,8 +39091,25 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.dateStart,
+              expression: "dateStart"
+            }
+          ],
           staticClass: "form-control",
-          attrs: { type: "date", name: "eventDateStart", id: "eventDateStart" }
+          attrs: { type: "date", name: "eventDateStart", id: "eventDateStart" },
+          domProps: { value: _vm.dateStart },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.dateStart = $event.target.value
+            }
+          }
         })
       ]),
       _vm._v(" "),
@@ -39030,8 +39119,25 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.dateEnd,
+              expression: "dateEnd"
+            }
+          ],
           staticClass: "form-control",
-          attrs: { type: "date", name: "eventDateEnd", id: "eventDateEnd" }
+          attrs: { type: "date", name: "eventDateEnd", id: "eventDateEnd" },
+          domProps: { value: _vm.dateEnd },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.dateEnd = $event.target.value
+            }
+          }
         })
       ])
     ]
@@ -39198,10 +39304,10 @@ var render = function() {
       {
         class: ["modal", "fade", _vm.modalClass],
         attrs: {
-          id: _vm.modalid,
+          id: _vm.modalId,
           tabindex: "-1",
           role: "dialog",
-          "aria-labelledby": "modalid",
+          "aria-labelledby": _vm.modalId,
           "aria-hidden": "true"
         }
       },
@@ -39214,7 +39320,15 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "modal-content" }, [
-              _vm._m(0),
+              _c("div", { staticClass: "modal-header" }, [
+                _c(
+                  "h5",
+                  { staticClass: "modal-title", attrs: { id: "modalTitle" } },
+                  [_vm._v(_vm._s(_vm.modalTitle))]
+                ),
+                _vm._v(" "),
+                _vm._m(0)
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "modal-body" }, [_vm._t("default")], 2),
               _vm._v(" "),
@@ -39241,24 +39355,18 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-header" }, [
-      _c("h5", { staticClass: "modal-title", attrs: { id: "modalTitle" } }, [
-        _vm._v("Modal title")
-      ]),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "close",
-          attrs: {
-            type: "button",
-            "data-dismiss": "modal",
-            "aria-label": "Close"
-          }
-        },
-        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
-      )
-    ])
+    return _c(
+      "button",
+      {
+        staticClass: "close",
+        attrs: {
+          type: "button",
+          "data-dismiss": "modal",
+          "aria-label": "Close"
+        }
+      },
+      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+    )
   }
 ]
 render._withStripped = true

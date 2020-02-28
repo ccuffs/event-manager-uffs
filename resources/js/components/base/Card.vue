@@ -51,40 +51,40 @@
 <script>
 export default {
     props: {
-        "cardImage": {
+        cardImage: {
             type: String,
             default: "https://www.showmetech.com.br/wp-content/uploads//2015/02/image_new-11.png",
         },
 
-        "actionCard": {
+        actionCard: {
             type: Boolean,
             default: false,
         },
 
-        "modalTrigger": {
+        modalTrigger: {
             type: Boolean,
             default: false,
         },
 
-        "modalTarget": {
+        modalTarget: {
             type: String,
             default: '',
         },
 
-        "destinationUrl": {
+        destinationUrl: {
             type: String,
             default: "#",
         },
 
-        "title": {
+        title: {
             type: String,
         },
 
-        "description": {
+        description: {
             type: String,
         },
 
-        "date": {
+        date: {
             type: String,
         },
     },
