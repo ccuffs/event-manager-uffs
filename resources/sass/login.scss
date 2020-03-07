@@ -1,27 +1,26 @@
 %card-content {
-
     width: 100%;
     height: 45px !important;
     border-radius: 2px !important;
-    
+
 }
 
 .card__shadow {
 
-    @extend .card, .mt-5; 
+    @extend .card, .mt-5;
     box-shadow: $card-shadow;
 
 }
 
 .card__input {
-    
+
     @extend %card-content, .text-input;
     font-size: larger;
-    
+
 }
 
 .card__btn {
-    
+
     @extend %card-content, .btn, .mt-4, .mb-3;
 
     font-weight: 600;
@@ -32,13 +31,7 @@
 }
 
 .card__action {
-    
+
     @extend .action;
-
-}
-
-.card__action:hover {
-
-    color: $primary;
 
 }
