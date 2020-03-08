@@ -11,15 +11,12 @@
 |
 */
 
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/login', 'LoginController@index')->name('login.index');
+Route::post('/login', 'LoginController@auth')->name('login.auth');
 
 Auth::routes();
-
-Route::get('/', function() {
-    return  view('home');
-});
 
 Route::get('/editor', function() {
     return view('editor');
 });
-
-// Route::get('/', 'HomeController@index')->name('home');
