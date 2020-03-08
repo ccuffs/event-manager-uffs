@@ -22,12 +22,13 @@ z";
     height: 100vh;
     position: relative;
 
-    background-image: url("http://uffs.cc/sacc/img/banner.jpg");
+    background-image: url("/img/banner.jpg");
 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: 0;
 
     &__container {
         width: 100%;
@@ -62,7 +63,7 @@ z";
         position: absolute;
         bottom: 0;
         left: 0;
-        z-index: 99;
+        z-index: 2;
 
         path {
             fill: $light;
@@ -71,6 +72,10 @@ z";
             stroke-linejoin: round;
             transition: 0.2s;
         }
+    }
 
+    & + .navbar {
+        margin-top: -1rem;
+        z-index: 1100!important;
     }
 }

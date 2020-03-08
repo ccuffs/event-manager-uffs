@@ -11584,19 +11584,16 @@ a.text-dark:focus {
   color: #fff;
 }
 
-.card__action:hover {
-  color: #249e63;
-}
-
 .header {
   width: 100%;
   height: 100vh;
   position: relative;
-  background-image: url("http://uffs.cc/sacc/img/banner.jpg");
+  background-image: url("/img/banner.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  z-index: 0;
 }
 
 .header__container {
@@ -11635,7 +11632,7 @@ a.text-dark:focus {
   position: absolute;
   bottom: 0;
   left: 0;
-  z-index: 99;
+  z-index: 2;
 }
 
 .header__svg path {
@@ -11645,6 +11642,11 @@ a.text-dark:focus {
   stroke-linejoin: round;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+
+.header + .navbar {
+  margin-top: -1rem;
+  z-index: 1100 !important;
 }
 
 .app-main {
@@ -11906,7 +11908,7 @@ a.text-dark:focus {
 
 .navbar__title {
   text-align: center;
-  color: #f8f9fa;
+  color: #249e63;
   font-size: 2rem;
 }
 
@@ -11920,5 +11922,175 @@ a.text-dark:focus {
 
 .navbar__logout {
   color: #f8f9fa;
+}
+
+.modal-content {
+  border-radius: 0.6rem;
+}
+
+.modal-header {
+  border-top-left-radius: 0.6rem;
+  border-top-right-radius: 0.6rem;
+}
+
+.modal-footer {
+  border-bottom-left-radius: 0.6rem;
+  border-bottom-right-radius: 0.6rem;
+}
+
+.modal .close {
+  outline: none;
+}
+
+.modal .close {
+  color: #fff;
+}
+
+.modal--primary .modal-content {
+  background-color: #249e63;
+}
+
+.modal--primary .modal-header,
+.modal--primary .modal-footer {
+  background-color: #249e63;
+  color: #fff;
+}
+
+.modal--primary .modal-body {
+  background-color: #d3ece0;
+  color: #212529;
+}
+
+.modal .close {
+  color: #fff;
+}
+
+.modal--secondary .modal-content {
+  background-color: #6c757d;
+}
+
+.modal--secondary .modal-header,
+.modal--secondary .modal-footer {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.modal--secondary .modal-body {
+  background-color: #e2e3e5;
+  color: #212529;
+}
+
+.modal .close {
+  color: #fff;
+}
+
+.modal--success .modal-content {
+  background-color: #38c172;
+}
+
+.modal--success .modal-header,
+.modal--success .modal-footer {
+  background-color: #38c172;
+  color: #fff;
+}
+
+.modal--success .modal-body {
+  background-color: #d7f3e3;
+  color: #212529;
+}
+
+.modal .close {
+  color: #212529;
+}
+
+.modal--info .modal-content {
+  background-color: #6cb2eb;
+}
+
+.modal--info .modal-header,
+.modal--info .modal-footer {
+  background-color: #6cb2eb;
+  color: #212529;
+}
+
+.modal--info .modal-body {
+  background-color: #e2f0fb;
+  color: #212529;
+}
+
+.modal .close {
+  color: #212529;
+}
+
+.modal--warning .modal-content {
+  background-color: #ffed4a;
+}
+
+.modal--warning .modal-header,
+.modal--warning .modal-footer {
+  background-color: #ffed4a;
+  color: #212529;
+}
+
+.modal--warning .modal-body {
+  background-color: #fffbdb;
+  color: #212529;
+}
+
+.modal .close {
+  color: #fff;
+}
+
+.modal--danger .modal-content {
+  background-color: #e3342f;
+}
+
+.modal--danger .modal-header,
+.modal--danger .modal-footer {
+  background-color: #e3342f;
+  color: #fff;
+}
+
+.modal--danger .modal-body {
+  background-color: #f9d6d5;
+  color: #212529;
+}
+
+.modal .close {
+  color: #212529;
+}
+
+.modal--light .modal-content {
+  background-color: #f8f9fa;
+}
+
+.modal--light .modal-header,
+.modal--light .modal-footer {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.modal--light .modal-body {
+  background-color: #fefefe;
+  color: #212529;
+}
+
+.modal .close {
+  color: #fff;
+}
+
+.modal--dark .modal-content {
+  background-color: #343a40;
+}
+
+.modal--dark .modal-header,
+.modal--dark .modal-footer {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.modal--dark .modal-body {
+  background-color: #d6d8d9;
+  color: #212529;
 }
 
