@@ -44,11 +44,6 @@ $button-border-weight: 3px;
 /* standard button styles */
 .btn {
     @include button-size(normal);
-    // display: flex;
-    // align-items: center;
-    // justify-content: space-between;
-
-    // text-transform: uppercase;
 
     border-radius: $button-border-weight;
 
@@ -79,7 +74,7 @@ $button-border-weight: 3px;
 
     /* full width button */
     &--full {
-        display: inline-block;
+        display: block;
         width: 100%;
     }
 
@@ -104,7 +99,7 @@ $button-border-weight: 3px;
         }
 
         /* outline variant */
-        &--#{$color}-outline {
+        &--#{$color}.btn--outline {
             border-width: $button-border-weight / 2;
             border-style: solid;
             border-color: $value;
@@ -118,7 +113,7 @@ $button-border-weight: 3px;
         }
 
         /* gradient variant */
-        &--#{$color}-gradient {
+        &--#{$color}.btn--gradient {
             background-image: linear-gradient(
                 to bottom right,
                 theme-color-level($color, -3),

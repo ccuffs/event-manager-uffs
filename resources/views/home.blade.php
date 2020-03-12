@@ -27,11 +27,11 @@
             Button Danger Shadow md
         </button>
 
-        <button type="button" class="btn btn--primary-gradient">
+        <button type="button" class="btn btn--primary btn--gradient">
             Button Primary Gradient
         </button>
 
-        <button type="button" class="btn btn--primary-outline">
+        <button type="button" class="btn btn--primary btn--outline">
             Button Primary Outline
         </button>
 
