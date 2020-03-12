@@ -8,7 +8,6 @@
 .card__shadow {
 
     @extend .card, .mt-5;
-    box-shadow: $card-shadow;
 
 }
 
