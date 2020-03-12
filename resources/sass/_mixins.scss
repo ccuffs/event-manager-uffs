@@ -1,4 +1,11 @@
 @mixin box-shadow($variant: sm, $reverse: false) {
+    /*
+     * Creates a box shadow either small (standard),
+     * medium (md) or large (lg). Passing true along
+     * with the size will cause shadow going upwards
+     * instead of downwards.
+     * */
+
     $shadowHOffset: 0;
     $shadowVOffset: 1px;
     $shadowBlur: 3px;

@@ -1,0 +1,47 @@
+@import "variables";
+@import "mixins";
+
+$modal-border-radius: 0.6rem;
+
+.modal {
+    &-content {
+        border-radius: $modal-border-radius;
+
+    }
+
+    &-header {
+        border-top-left-radius: $modal-border-radius;
+        border-top-right-radius: $modal-border-radius;
+    }
+
+    &-footer {
+        border-bottom-left-radius: $modal-border-radius;
+        border-bottom-right-radius: $modal-border-radius;
+
+    }
+
+    .close {
+        outline: none;
+    }
+
+    @each $color, $value in $theme-colors {
+        .close {
+            color: color-yiq($value);
+        }
+
+        &--#{$color} &-content {
+            background-color: $value;
+        }
+
+        &--#{$color} &-header,
+        &--#{$color} &-footer {
+            background-color: $value;
+            color: color-yiq($value);
+        }
+
+        &--#{$color} &-body {
+            background-color: theme-color-level($color, -10);
+            color: color-yiq(theme-color-level($color, -10));
+        }
+    }
+}
