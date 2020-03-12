@@ -111,25 +111,5 @@ $button-border-weight: 3px;
                 color: color-yiq($value);
             }
         }
-
-        /* gradient variant */
-        &--#{$color}.btn--gradient {
-            background-image: linear-gradient(
-                to bottom right,
-                theme-color-level($color, -3),
-                theme-color-level($color, 2),
-            );
-            color: color-yiq($value);
-
-            // BUG: transition not works since the changing
-            // property is a background-image.
-            &:hover {
-                background-image: linear-gradient(
-                    to bottom right,
-                    theme-color-level($color, -1),
-                    theme-color-level($color, 4),
-                );
-            }
-        }
     }
 }
