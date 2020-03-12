@@ -54,12 +54,6 @@
     {{-- Main --}}
     <main class="app-main">
 
-        <base-card
-            action-card
-            modalTrigger
-            modalTarget="createEventModal"
-        >
-        </base-card>
     </main>
 
     {{-- Footer --}}

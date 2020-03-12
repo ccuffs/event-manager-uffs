@@ -1,46 +1,76 @@
 <template>
-    <div class="">
-        <div class="card">
-            <img :src="cardImage" class="card__image">
+    <div :class="['card', cardShadowClass]">
+        <div v-if="paperCard" :class="['card--paper', paperCardVariantClass, paperCardPaddingClass]">
+            <slot></slot>
+        </div>
 
-            <a
-                v-if="actionCard"
-                class="card__action"
-                :href="destinationUrl"
-                :data-toggle="modalTrigger ? '' : 'modal'"
-                data-target="#createEventModal"
-                >
+        <div class="card__container" v-else>
+            <img :src="cardImage" :class="{ 'card__image': !actionCard, 'card--action__image': actionCard }">
 
-                <div>
-                    <p class="card__icon">+</p>
+            <a v-if="actionCard" class="card--action" :href="destinationUrl">
+                <div class="">
+                    <p class="card__icon">
+                        <i class="material-icons">add_circle</i>
+                    </p>
                     <p>Novo Evento</p>
                 </div>
             </a>
 
-            <a v-else class="card__content" :href="destinationUrl">
-                <p class="card__title">
-                    {{ title }}
-                </p>
+            <a v-else class="card--content" :href="destinationUrl">
+                <svg class="card__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="none">
+                    <path
+                    class="card__line-fill"
+                    d="
+                    M 0,100
+                    Q 50,200,100,250
+                    Q 250,400,350,300
+                    C 400,250,550,150,650,300
+                    Q 750,450,800,400
+                    L 800,450
+                    L 0,450
+                    "/>
 
-                <p class="card__description">
-                    {{ description }}
-                </p>
+                    <path
+                    class="card__line"
+                    d="
+                    M 0,100
+                    Q 50,200,100,250
+                    Q 250,400,350,300
+                    C 400,250,550,150,650,300
+                    Q 750,450,800,400
+                    "
+                    />
+                </svg>
 
-                <p class="card__date">
-                    {{ date }}
-                </p>
+                <div class="card__body">
+                    <div class="card__hidden">
+                        <p class="card__description">
+                            {{ description }}
+                        </p>
 
-                <div class="card__controls">
-                    <div class="btn-group">
-                        <a href="#" class="btn btn-outline-primary">
-                            <span>Visualizar</span>
-                        </a>
-                        <a href="#" class="btn btn-outline-success">
-                            <span>Editar</span>
-                        </a>
-                        <a href="#" class="btn btn-outline-danger">
-                            <span>Excluir</span>
-                        </a>
+                        <div class="card__controls">
+                            <div class="btn-group">
+                                <a href="#" class="btn btn--outline-primary">
+                                    <span>Visualizar</span>
+                                </a>
+                                <a href="#" class="btn btn--outline-success">
+                                    <span>Editar</span>
+                                </a>
+                                <a href="#" class="btn btn--outline-danger">
+                                    <span>Excluir</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card__show">
+                        <p class="card__title">
+                            {{ title }}
+                        </p>
+
+                        <p class="card__subtitle">
+                            {{ date }}
+                        </p>
                     </div>
                 </div>
             </a>
@@ -51,50 +81,71 @@
 <script>
 export default {
     props: {
-        cardImage: {
+        "cardImage": {
             type: String,
             default: "https://www.showmetech.com.br/wp-content/uploads//2015/02/image_new-11.png",
         },
 
-        actionCard: {
+        "actionCard": {
             type: Boolean,
             default: false,
         },
 
-        modalTrigger: {
+        "paperCard": {
             type: Boolean,
             default: false,
         },
 
-        modalTarget: {
+        "variant": {
             type: String,
-            default: '',
         },
 
-        destinationUrl: {
+        "shadow": {
+            type: String,
+            default: "small",
+        },
+
+        "padding": {
+            type: String,
+            default: "small",
+        },
+
+        "destinationUrl": {
             type: String,
             default: "#",
         },
 
-        title: {
+        "title": {
             type: String,
         },
 
-        description: {
+        "description": {
             type: String,
         },
 
-        date: {
+        "date": {
             type: String,
         },
     },
+
+    computed: {
+        paperCardVariantClass: function() {
+            return "card--paper-" + this.variant;
+        },
+
+        cardShadowClass: function() {
+            return "card__shadow--" + this.shadow;
+        },
+
+        paperCardPaddingClass: function() {
+            return "card--padding-" + this.padding;
+        }
+    }
 }
 </script>
 
 <style scoped>
-    .card__controls .btn-group {
+    .btn-group {
         width: 100%;
-        display: flex;
     }
-
 </style>
