@@ -19,9 +19,11 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('base-card', require('./components/BaseCard.vue').default);
-Vue.component('base-header', require('./components/BaseHeader.vue').default);
+Vue.component('base-card', require('./components/base/Card.vue').default);
+Vue.component('base-header', require('./components/base/Header.vue').default);
+Vue.component('base-modal', require('./components/base/Modal.vue').default);
+
+Vue.component('event-form', require('./components/EventForm.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
