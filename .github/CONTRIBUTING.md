@@ -1,5 +1,6 @@
 # Guia de contribuição
-blá blsaasjhsad jfe
+
+Sua contribuição será muito bem vinda, agradecemos e encorajamos seu interesse. Neste documento, você encontrará um guia de como poderá nos auxiliar. Se deseja ajudar com o código, se encontrou algo de errado ou se possui uma ideia que poderá melhorar o projeto, este documento lhe fornecerá os passos a serem tomados.
 
 ## Como contribuir
 
@@ -18,9 +19,9 @@ Um *bug* é uma falha no código que resulta em um comportamento inesperado. Bug
 1. **Certifique-se que a issue ainda não existe:** verifique a lista de issues, buscando por similaridades.
 1. **Confira se o problema a ser reportado já não foi resolvido:** neste caso, a issue já estará fechada (verifique a lista de issues resolvidas também) e seu código está desatualizado.
 1. **Crie uma issue identificando o problema:** uma issue que descreve um bug deve ser objetiva e concisa porém significativa. Ela deve conter conteúdo suficiente para que seja possível solucionar o problema sem buscar mais informações. Essencialmente, um relatório de erros deve conter:
-    1. Descrição do ambiente utilizado: browser, versões das ferramentas, etc;
-    1. Descrição detalhada das condições em que o bug surgiu. Deve ser possível reproduzir o bug apartir desta descrição;
-    1. Outras informações relevantes, como possíveis soluções;
+1. Descrição do ambiente utilizado: browser, versões das ferramentas, etc;
+1. Descrição detalhada das condições em que o bug surgiu. Deve ser possível reproduzir o bug apartir desta descrição;
+1. Outras informações relevantes, como possíveis soluções;
 
 ## Requisitar uma nova funcionalidade
 
@@ -53,7 +54,14 @@ Antes de desenvolver qualquer funcionalidade, garanta que seu branch está atual
 git pull upstream master
 ```
 
-Quando terminar de implementar a funcionalidade, bsata mandar uma pull request, e requisitar que algum mantenedor revise o código.
+Nós encorajamos que você crie uma *branch* baseada na `master`, cujo nome reflita na ideia central da issue a ser implementada, de forma concisa:
+
+```
+git checkout master
+git checkout -b <nova-branch>
+```
+
+Quando terminar de implementar a funcionalidade, basta mandar uma *pull request*, e requisitar que algum mantenedor revise o código.
 
 #### Convenções de código
 Para que aceitemos seu código, ele deve atender às convenções e padrões que adotamos.
