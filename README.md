@@ -1,5 +1,31 @@
-# Gerenciador de eventos UFFS
-Esse repositório hospeda o código do sistema gerenciador de eventos da Universidade Federal da Fronteira Sul. O projeto está sendo desenvolvido pela célula web da [FronteiraTec](http://fronteiratec.com/) empresa júnior do curso de [Ciência da Computação](https://cc.uffs.edu.br/).
+<p align="center">
+    <img src = "https://raw.githubusercontent.com/arufonsekun/event-manager-uffs/readme-improvements/public/img/logo_uffs.png" width="493" height="228" />
+</p>
+
+
+<p align="center">
+    <a href="https://github.com/FronteiraTec/event-manager-uffs/issues" target="_blank">
+        <img src="https://img.shields.io/github/issues-raw/FronteiraTec/event-manager-uffs?color=269f42&style=flat" />
+    </a>
+    <a href="https://github.com/FronteiraTec/event-manager-uffs/issues?q=is%3Aissue+is%3Aclosed" target="_blank">
+        <img src="https://img.shields.io/github/issues-closed-raw/FronteiraTec/event-manager-uffs?color=%230366d6&style=flat" />
+    </a>
+    <a href="https://github.com/FronteiraTec/event-manager-uffs/pulls" target="_blank">
+        <img src="https://img.shields.io/github/issues-pr-raw/FronteiraTec/event-manager-uffs?color=28a745&style=flat" />
+    </a>
+    <a href="https://github.com/FronteiraTec/event-manager-uffs/pulls?q=is%3Apr+is%3Aclosed" target="_blank">
+        <img src="https://img.shields.io/github/issues-pr-closed-raw/FronteiraTec/event-manager-uffs?color=0366d6" />
+    </a>
+    </br>
+    <img src="https://img.shields.io/github/license/FronteiraTec/event-manager-uffs" />
+    <img src="https://img.shields.io/badge/Bootstrap-4.0.0-%23563d7c" />
+    <img src="https://img.shields.io/badge/VueJS-2.5.17-%2341b883" />
+    <img src="https://img.shields.io/badge/Laravel-6.11.0-%23ff2d20" />
+</p>
+
+<h2 align="center"> Gerenciador de eventos UFFS </h2>
+
+Esse repositório hospeda o código do sistema gerenciador de eventos da Universidade Federal da Fronteira Sul. O projeto está sendo desenvolvido pela [FronteiraTec](http://fronteiratec.com/) empresa júnior do curso de [Ciência da Computação](https://cc.uffs.edu.br/).
 
 O gerenciador de eventos é um sistema cujo objetivo é facilitar a criação, gerenciamento e divulgação de eventos associados à UFFS. Inicialmente ele irá criar e estruturar sites voltados para as semanas acadêmicas, futuramente para eventos em geral.
 
@@ -7,7 +33,13 @@ O gerenciador de eventos é um sistema cujo objetivo é facilitar a criação, g
  - Facilita a criação de eventos como as semanas acadêmicas;
  - Gerencia seus inscritos;
 
-## Instalação
+## Tecnologias utilizadas
+ - [Laravel](https://laravel.com);
+ - [Bootstrap](https://getbootstrap.com/);
+ - [VueJS](https://vuejs.org);
+
+## Instalação                 
+
 ### Dependências
 Para executar o projeto será necessário a instalação das seguintes dependências:
  - [PHP](https://www.php.net/downloads);
