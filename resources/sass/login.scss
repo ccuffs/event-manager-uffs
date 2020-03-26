@@ -1,36 +1,53 @@
 %card-content {
-    width: 100%;
+
+    width: 100% !important;
     height: 45px !important;
     border-radius: 2px !important;
-
+    
 }
 
 .card__shadow {
 
-    @extend .card, .mt-5;
+    @extend .card, .mt-5; 
+    box-shadow: $card-shadow;
+    width: 100% !important;
 
 }
 
 .card__input {
-
+    
     @extend %card-content, .text-input;
     font-size: larger;
-
+    
 }
 
 .card__btn {
+    
+    @extend %card-content, .btn, .mt-3, .mb-3;
 
-    @extend %card-content, .btn, .mt-4, .mb-3;
-
-    font-weight: 600;
-    letter-spacing: 2px;
+    background-color: $primary !important;
     font-size: $font-size-lg;
+    width: 100% !important;
+    letter-spacing: 2px;
+    font-weight: 600;
     color: $white;
 
 }
 
 .card__action {
-
+    
     @extend .action;
 
+}
+
+.errors {
+
+    margin-bottom: 0px;
+
+}
+
+.errors__item {
+    
+    list-style: none;
+    
 }

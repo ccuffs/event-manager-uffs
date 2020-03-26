@@ -133,6 +133,12 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'username' => [
+            'required' => 'O campo IdUFFS é obrigratório'
+        ],
+        'password' => [
+            'required' => 'O campo senha é obrigatório'
+        ]
     ],
 
     /*
@@ -146,6 +152,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'username' => 'IdUFFS',
+        'password' => 'Senha'
+    ],
 
 ];
