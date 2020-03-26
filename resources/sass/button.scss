@@ -1,19 +1,115 @@
-.btn {
+@import "variables";
+@import "mixins";
 
-    @extend .btn;
-    box-shadow: $btn-box-shadow;
-
-}
-
-.btn:focus {
-
-    @extend %form-content-focus;
-
-}
-
+/* remove standard styles from links */
+.btn,
+.btn:active,
 .btn:hover {
+    text-decoration: none;
+}
 
-    background-color: theme-color-level(primary, 2) !important;
-    color: $white;
+/* remove standard styles from inputs and buttons */
+.btn {
+    outline: none;
+    border: none;
 
+    &:focus {
+        outline: none;
+    }
+}
+
+/* variables and mixins used in the button styling */
+@mixin button-size($size: normal) {
+    /*
+     * Adds a padding for the button,
+     * according to given size.
+     * */
+
+    @if $size == small {
+        font-size: 0.8rem;
+        padding: 0.3rem;
+
+    } @else if $size == normal {
+        font-size: 1rem;
+        padding: 0.6rem;
+
+    } @else if $size == large {
+        font-size: 1.4rem;
+        padding: 0.9rem;
+    }
+}
+
+$button-border-weight: 3px;
+
+/* standard button styles */
+.btn {
+    @include button-size(normal);
+
+    border-radius: $button-border-weight;
+
+    transition: all 0.2s ease;
+
+    text-align: center!important;
+    cursor: pointer;
+
+    /* button icon */
+    i {
+        vertical-align: middle;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* button's shadows */
+    &--shadow {
+        @include box-shadow(sm);
+    }
+
+    &--shadow-md {
+        @include box-shadow(md);
+    }
+
+    &--shadow-lg {
+        @include box-shadow(lg);
+    }
+
+    /* full width button */
+    &--full {
+        display: block;
+        width: 100%;
+    }
+
+    /* button sizes */
+    &--small {
+        @include button-size(small);
+    }
+
+    &--large {
+        @include button-size(large);
+    }
+
+    /* button theme variations */
+    @each $color, $value in $theme-colors {
+        &--#{$color} {
+            background-color: $value;
+            color: color-yiq($value);
+
+            &:hover {
+                background-color: theme-color-level($color, 2);
+            }
+        }
+
+        /* outline variant */
+        &--#{$color}.btn--outline {
+            border-width: $button-border-weight / 2;
+            border-style: solid;
+            border-color: $value;
+            background: transparent;
+            color: $value;
+
+            &:hover {
+                background-color: $value;
+                color: color-yiq($value);
+            }
+        }
+    }
 }

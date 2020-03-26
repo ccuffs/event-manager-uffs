@@ -10,3 +10,7 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+
+# Remove when in production
+/public/js/app.js
+/public/css/app.css
