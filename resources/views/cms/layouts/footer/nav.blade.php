@@ -1,5 +1,5 @@
 <footer class="footer">
-    <div class="container @auth-fluid @endauth">
+    <div class="container-fluid">
         <nav>
             <ul class="footer-menu">
                 <li>

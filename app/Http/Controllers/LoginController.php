@@ -14,7 +14,7 @@ class LoginController extends Controller
     public function index()
     {
         if (Auth::check()) {
-            return redirect()->route('home');
+            return redirect()->route('cms.home');
         }
 
         return view('login.index');
@@ -39,13 +39,13 @@ class LoginController extends Controller
         $user = $this->getOrCreateUser($userData);
 
         Auth::login($user);
-        return redirect()->intended('home');
+        return redirect()->intended(route('cms.home'));
     }
 
     public function logout()
     {
         Auth::logout();
-        return redirect()->intended('home');
+        return redirect()->intended(route('home'));
     }
 
     private function getOrCreateUser($data)
