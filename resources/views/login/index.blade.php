@@ -22,18 +22,18 @@
                         <br>
                         @if ($errors->any())
                             <div class="alert alert-danger">
-                                <ul>
+                                <ul class="errors">
                                     @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
+                                        <li class="errors__item">{{ $error }}</li>
                                     @endforeach
                                 </ul>
                             </div>
                         @endif
-                        <button class="btn btn-primary">ENTRAR</button>
+                        <button class="card__btn">ENTRAR</button>
                         <br>
                         <a href="https://id.uffs.edu.br/id/XUI/?realm=/#forgotUsername/" target="_blank" class="text-primary"> Não sabe seu IdUFFS? </a>
                         <br>
-                        <a href="#" target="_blank" class="text-primary"> Esqueceu seu senha? </a>
+                        <a href="#" target="_blank" class="text-primary"> Esqueceu sua senha? </a>
                     </form>
                 </div>
             </div>
