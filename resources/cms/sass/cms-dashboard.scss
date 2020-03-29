@@ -1,0 +1,28 @@
+@import "variables";
+@import "mixins";
+
+@import "typography";
+
+// Core CSS
+@import "misc";
+@import "sidebar-and-main-panel";
+@import "buttons";
+@import "inputs";
+
+@import "alerts";
+@import "tables";
+
+@import "checkbox-radio-switch";
+@import "navbars";
+@import "footers";
+
+// Fancy Stuff
+@import "plugins/animate";
+@import "dropdown";
+@import "cards";
+@import "chartist";
+@import "responsive";
+@import "bootstrap-switch";
+
+// Nucleo Icons
+@import "partial-nucleo-icons";
