@@ -1,4 +1,4 @@
-@extends('cms.layouts.app', ['activePage' => 'dashboard', 'title' => 'Light Bootstrap Dashboard Laravel by Creative Tim & UPDIVISION', 'navName' => 'Dashboard', 'activeButton' => 'laravel'])
+@extends('cms.layouts.app', ['activePage' => 'events', 'title' => 'Event Manager UFFS', 'navName' => 'Eventos'])
 
 @section('content')
     <div class="content">
