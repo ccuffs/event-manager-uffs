@@ -1,3 +1,6 @@
+{{-- Event creation modal --}}
+<event-form></event-form>
+
 <div class="sidebar" data-color="green" data-image="{{ asset('cms/img/sidebar.jpg') }}">
     <div class="sidebar-wrapper">
         <div class="logo">
@@ -14,7 +17,7 @@
 
                 <div class="collapse show" id="eventsOptions">
                     <ul class="nav">
-                        <li class="nav-item">
+                        <li class="nav-item @if($activePage == 'existingEvents') active @endif">
                             <a class="nav-link" href="#">
                                 <i class="nc-icon nc-align-left-2"></i>
                                 <p>Eventos Existentes</p>
@@ -22,7 +25,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link @if($activePage == 'newEvent') active @endif" href="#" data-toggle="modal" data-target="#createEventModal">
                                 <i class="nc-icon nc-simple-add"></i>
                                 <p>Novo Evento</p>
                             </a>

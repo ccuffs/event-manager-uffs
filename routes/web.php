@@ -19,6 +19,6 @@ Route::get('/logout', 'LoginController@logout')->name('login.logout');
 
 
 Route::prefix('cms')->middleware('auth')->namespace('Cms')->group(function () {
+    Route::resource('event', 'EventController');
     Route::get('/home', 'HomeController@index')->name('cms.home');
 });
-

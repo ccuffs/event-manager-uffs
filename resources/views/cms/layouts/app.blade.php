@@ -19,7 +19,10 @@
     <body>
         <div class="wrapper">
 
-            @include('cms.layouts.navbars.sidebar')
+            <div id="app">
+                @include('cms.layouts.navbars.sidebar')
+
+            </div>
 
             <div class="main-panel">
                 @include('cms.layouts.navbars.navbar')
@@ -43,6 +46,7 @@
     <!--  Notifications Plugin    -->
     <script src="{{ asset('cms/js/plugins/bootstrap-notify.js') }}"></script>
     <script src="{{ asset('cms/js/dashboard.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </html>
 
 

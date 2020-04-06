@@ -43,7 +43,7 @@ export default {
             dateEnd: '',
         }
     },
-    
+
     methods: {
         async createEvent() {
             let data = {
@@ -63,5 +63,5 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 </style>
