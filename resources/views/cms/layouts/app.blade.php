@@ -19,10 +19,7 @@
     <body>
         <div class="wrapper">
 
-            <div id="app">
-                @include('cms.layouts.navbars.sidebar')
-
-            </div>
+            @include('cms.layouts.navbars.sidebar')
 
             <div class="main-panel">
                 @include('cms.layouts.navbars.navbar')

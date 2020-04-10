@@ -1,6 +1,3 @@
-{{-- Event creation modal --}}
-<event-form></event-form>
-
 <div class="sidebar" data-color="green" data-image="{{ asset('cms/img/sidebar.jpg') }}">
     <div class="sidebar-wrapper">
         <div class="logo">
@@ -25,7 +22,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link @if($activePage == 'newEvent') active @endif" href="#" data-toggle="modal" data-target="#createEventModal">
+                            <a class="nav-link @if($activePage == 'newEvent') active @endif" href="{{ route('event.create') }}">
                                 <i class="nc-icon nc-simple-add"></i>
                                 <p>Novo Evento</p>
                             </a>
