@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Cms;
 use App\Speakers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class SpeakersController extends Controller
 {
@@ -36,7 +38,29 @@ class SpeakersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $name = $request->name;
+        $biography = $request->biography;
+        $photo = $request->file('photo');
+        $fileName = '';
+        
+        if ($photo)
+        {
+
+            $extension = $photo->getClientOriginalExtension();
+            
+            $fileName = $photo->getFilename().'.'.$extension;
+            Storage::disk('public')->put($fileName,  File::get($photo));
+        }
+            
+        $speaker = Speakers::create([
+            'name' => $name,
+            'biography' => $biography,
+            'photo' => $fileName
+        ]);
+
+        $speaker->save();
+
+        return redirect()->route('speakers.index');
     }
 
     /**

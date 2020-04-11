@@ -4,7 +4,8 @@
     <div class="content" id="app">
         <div class="container-fluid">
             <div class="card">
-                <form action="{{ route('speakers.store') }}" method="post">
+                <form action="{{ route('speakers.store') }}" method="post" autocomplete="off" enctype="multipart/form-data">
+                    @csrf
                     <div class="card-header">
                         <h4 class="card-title">
                             Novo Palestrante
