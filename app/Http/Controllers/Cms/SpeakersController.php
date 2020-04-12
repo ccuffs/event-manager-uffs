@@ -45,7 +45,6 @@ class SpeakersController extends Controller
         
         if ($photo)
         {
-
             $extension = $photo->getClientOriginalExtension();
             
             $fileName = $photo->getFilename().'.'.$extension;
