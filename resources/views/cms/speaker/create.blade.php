@@ -4,7 +4,7 @@
     <div class="content" id="app">
         <div class="container-fluid">
             <div class="card">
-                <form action="{{ route('speakers.store') }}" method="post" autocomplete="off" enctype="multipart/form-data">
+                <form action="{{ route('speaker.store') }}" method="post" autocomplete="off" enctype="multipart/form-data">
                     @csrf
                     <div class="card-header">
                         <h4 class="card-title">
@@ -13,7 +13,7 @@
                     </div>
 
                     <div class="card-body">
-                        <speakers-form photo="{{ asset('img/placeholder-image.png') }}"></speakers-form>
+                        <speaker-form photo="{{ asset('img/placeholder-image.png') }}"></speaker-form>
                     </div>
 
                     <div class="card-footer">

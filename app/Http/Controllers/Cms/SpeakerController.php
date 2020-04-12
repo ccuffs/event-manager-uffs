@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Cms;
 
-use App\Speakers;
+use App\Speaker;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 
-class SpeakersController extends Controller
+class SpeakerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,8 @@ class SpeakersController extends Controller
      */
     public function index()
     {
-        return view('cms.speakers.index');
+        $speakers = Speaker::all();
+        return view('cms.speaker.index', ['speakers' => $speakers]);
     }
 
     /**
@@ -27,7 +28,7 @@ class SpeakersController extends Controller
      */
     public function create()
     {
-        return view('cms.speakers.create');
+        return view('cms.speaker.create');
     }
 
     /**
@@ -51,7 +52,7 @@ class SpeakersController extends Controller
             Storage::disk('public')->put($fileName,  File::get($photo));
         }
             
-        $speaker = Speakers::create([
+        $speaker = Speaker::create([
             'name' => $name,
             'biography' => $biography,
             'photo' => $fileName
@@ -59,16 +60,16 @@ class SpeakersController extends Controller
 
         $speaker->save();
 
-        return redirect()->route('speakers.index');
+        return redirect()->route('speaker.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Speakers  $speakers
+     * @param  \App\Speaker  $speaker
      * @return \Illuminate\Http\Response
      */
-    public function show(Speakers $speakers)
+    public function show(Speaker $speakers)
     {
         //
     }
@@ -76,10 +77,10 @@ class SpeakersController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Speakers  $speakers
+     * @param  \App\Speaker  $speaker
      * @return \Illuminate\Http\Response
      */
-    public function edit(Speakers $speakers)
+    public function edit(Speaker $speaker)
     {
         //
     }
@@ -88,10 +89,10 @@ class SpeakersController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Speakers  $speakers
+     * @param  \App\Speaker  $speaker
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Speakers $speakers)
+    public function update(Request $request, Speaker $speaker)
     {
         //
     }
@@ -99,11 +100,13 @@ class SpeakersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Speakers  $speakers
+     * @param  \App\Speaker  $speaker
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Speakers $speakers)
+    public function destroy(Speaker $speaker)
     {
-        //
+        $speaker->delete();
+        
+        return redirect()->route('speaker.index')->withStatus('Palestrante removido com sucesso');
     }
 }
