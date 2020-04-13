@@ -26,6 +26,7 @@
                 </div>
 
                 <div class="card-body">
+                @if(!$speakers->isEmpty())
                     <div class="table-responsive">
                         <table class="table table-hover">
                             <thead>
@@ -42,11 +43,16 @@
                                         <td> {{ $speaker->biography }}</td>
                                         <td>
                                             <form action="{{ route('speaker.destroy', $speaker) }}" method="post">
+                                                
                                                 @csrf
                                                 @method('delete')
 
                                                 <a href="#" onclick="this.parentElement.submit();">
                                                     <i class="nc-icon nc-simple-remove"></i>
+                                                </a>
+
+                                                <a href="{{ route('speaker.edit', $speaker) }}" class="ml-2">
+                                                    <i class="fa fa-edit"></i>
                                                 </a>
                                             </form>
                                         </td>
@@ -55,6 +61,12 @@
                             </tbody>
                         </table>
                     </div>
+                @else
+                    <div class="alert alert-info fit-content" style="width: fit-content;">
+                        <i class="fa fa-warning"></i>
+                        Não há nenhum palestrante cadastrado
+                    </div>
+                @endif
                 </div>
             </div>
         </div>

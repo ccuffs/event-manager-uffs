@@ -4,12 +4,12 @@
         <div class="col-sm-6 pl-3">
             <div class="form-group">
                 <label for="name"> Nome </label>
-                <input type="text" name="name" ref="name" class="form-control" placeholder="Nome" required>
+                <input type="text" name="name" @model="name" ref="name" class="form-control" placeholder="Nome" required>
             </div>
 
             <div class="form-group">
                 <label for="biography"> Biografia </label>
-                <textarea name="biography" ref="biography" class="form-control h-auto" placeholder="Biografia" cols="30" rows="9" required></textarea>
+                <textarea name="biography" @model="biography" ref="biography" class="form-control h-auto" placeholder="Biografia" cols="30" rows="9" required></textarea>
             </div>
         </div>
 
@@ -35,6 +35,14 @@
         },
 
         props: {
+            name:  {
+                type: String,
+                default: ""
+            },
+            biography: {
+                type: String,
+                default: ""
+            },
             photo: {
                 type: String,
                 default: ""
@@ -89,6 +97,7 @@
 
     .photo {
         cursor: pointer;
+        width: inherit;
     }
 
     .h-auto {
