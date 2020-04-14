@@ -47,7 +47,6 @@ class SpeakerController extends Controller
         if ($photo)
         {
             $extension = $photo->getClientOriginalExtension();
-            
             $fileName = $photo->getFilename().'.'.$extension;
             Storage::disk('public')->put($fileName,  File::get($photo));
         }

@@ -1,34 +1,34 @@
 <template>
-    <div class="row p-2">
+    <div class="p-2">
+        <div class="row">
 
-        <div class="col-sm-6 pl-3">
-            <div class="form-group">
-                <label for="name"> Nome </label>
-                <input type="text" name="name" ref="name" class="form-control" placeholder="Nome" required>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="name"> Nome </label>
+                    <input type="text" name="name" ref="name" class="form-control" placeholder="Nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="biography"> Biografia </label>
+                    <textarea name="biography" ref="biography" class="form-control h-auto" placeholder="Biografia" cols="30" rows="8" required></textarea>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label for="biography"> Biografia </label>
-                <textarea name="biography" ref="biography" class="form-control h-auto" placeholder="Biografia" cols="30" rows="9" required></textarea>
+            <div class="col-sm-4">
+                <label class="label-photo ml-3">
+                    Escolha uma foto
+                    <img :src="photoSource" ref="photo" class="photo" alt="Placeholder image">
+                    <input type="file" accept=".png,.jpeg" @change="handleImageUpload" name="photo" class="d-none" placeholder="Escolha uma foto">
+                </label>
             </div>
+
         </div>
-
-        <div class="col-sm-4 pl-3">
-            
-            <label for="photo" class="mt-4"> Selecione a photo</label>
-            <img v-bind:src="photoSource" @click="triggerImagePicker" ref="photo" class="photo" alt="Placeholder image">
-
-            <div class="form-group d-none">
-                <input type="file" accept=".png,.jpeg" @change="handleImageUpload" name="photo" ref="imagePicker" placeholder="Escolha uma foto">
-            </div>
-        </div>
-
     </div>
 </template>
 
 <script>
     export default {
-        data: function(){
+        data(){
             return {
                 photoSource: ""
             }
@@ -42,29 +42,18 @@
         },
 
         methods: {
-            triggerImagePicker: function(){
-
-                this.$refs.imagePicker.click();
-
-            },
 
             handleImageUpload: function(event){
-
-                let input = event.target;
-                let imageSource = URL.createObjectURL(input.files[0]);
-                this.photoSource = imageSource;
-
+                const input = event.target;
+                this.photoSource = URL.createObjectURL(input.files[0]);
             },
 
             clearValidationMessage: function(e){
-
                 e.target.setCustomValidity("");
-
             },
 
             setValidationMessage: function(e){
-                
-                let input = e.target;
+                const input = e.target;
                 this.clearValidationMessage(e);
                 
                 if (!input.validity.valid){
@@ -86,9 +75,14 @@
 </script>
 
 <style scoped>
-
+    
+    .label-photo {
+        width: inherit;
+    }   
+    
     .photo {
         cursor: pointer;
+        width: inherit;
     }
 
     .h-auto {

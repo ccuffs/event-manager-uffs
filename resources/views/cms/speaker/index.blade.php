@@ -5,9 +5,12 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title mb-3">
-                        nome-do-evento/Palestrantes
-                    </h4>
+                    
+                    <div class="mb-3">
+                        <h4 class="card-title">
+                            nome-do-evento/Palestrantes
+                        </h4>
+                    </div>
 
                     <a href="{{ route('speaker.create') }}" class="btn btn-primary btn-wd">
                         Novo
@@ -45,9 +48,9 @@
                                                 @csrf
                                                 @method('delete')
 
-                                                <a href="#" onclick="this.parentElement.submit();">
+                                                <button type="submit" class="btn btn-simple btn-danger">
                                                     <i class="nc-icon nc-simple-remove"></i>
-                                                </a>
+                                                </button>
                                             </form>
                                         </td>
                                     </tr>
