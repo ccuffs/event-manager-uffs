@@ -13,5 +13,14 @@
                 </a>
             </li>
         </ul>
+
+        <ul class="nav">
+            <li class="nav-item @if($activePage == 'speakers') active @endif">
+                <a class="nav-link" href="{{route('speaker.index')}}">
+                    <i class="nc-icon nc-circle-09"></i>
+                    <p>Palestrantes</p>
+                </a>
+            </li>
+        </ul>
     </div>
 </div>
