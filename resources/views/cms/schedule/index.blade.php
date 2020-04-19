@@ -24,10 +24,21 @@
                     <table class="table table-hover">
                         <thead>
                             <th> Titulo </th>
+                            <th> Local </th>
                             <th> Horário </th>
                             <th> Ações </th>
                         </thead>
                         <tbody>
+                        @foreach($schedules as $schedule)
+                            <tr>
+                                <td>{{ $schedule->title }}</td>
+                                <td>{{ $schedule->place }}</td>
+                                <td>{{ $schedule->start_at->format('d/m/Y H:i') }}</td>
+                                <td>
+                                    <a href="{{ route('schedule.show', $schedule) }}" class="btn btn-sm btn-primary">Exibir</a>
+                                </td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
