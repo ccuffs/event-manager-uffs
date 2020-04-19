@@ -23,6 +23,7 @@ class ScheduleController extends Controller
     {
         $scheduleData = $request->validate([
             'title' => 'required|max:255',
+            'place' => 'required|max:255',
             'description' => 'required',
             'start_at' => 'date',
             'end_at' => 'nullable|date|after_or_equal:start_at'
