@@ -17,6 +17,16 @@
                     </div>
 
                     <div class="card-body">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                         <div class="p-2">
                             <div class="row">
                                 <div class="col-sm-6">
@@ -24,6 +34,7 @@
                                         <label for="title"> Nome </label>
                                         <input
                                             name="title"
+                                            class="form-control @error('title') is-invalid @enderror"
                                             id="title"
                                             class="form-control"
                                             placeholder="Nome"
@@ -37,6 +48,7 @@
                                         <label for="place"> Local </label>
                                         <input
                                             name="place"
+                                            class="form-control @error('place') is-invalid @enderror"
                                             id="place"
                                             class="form-control"
                                             placeholder="Local"
@@ -50,6 +62,7 @@
                                         <label for="start_at"> Início </label>
                                         <input
                                             name="start_at"
+                                            class="form-control @error('start_at') is-invalid @enderror"
                                             id="start_at"
                                             class="form-control"
                                             type="date"
@@ -63,11 +76,10 @@
                                         <label for="end_at"> Término </label>
                                         <input
                                             name="end_at"
+                                            class="form-control @error('end_at') is-invalid @enderror"
                                             id="end_at"
-                                            class="form-control"
                                             rows="4"
                                             type="date"
-                                            required
                                         >
                                     </div>
                                 </div>
@@ -77,6 +89,7 @@
                                         <label for="description"> Descrição </label>
                                         <textarea
                                             name="description"
+                                            class="form-control @error('description') is-invalid @enderror"
                                             id="description"
                                             class="form-control"
                                             placeholder="Descrição"

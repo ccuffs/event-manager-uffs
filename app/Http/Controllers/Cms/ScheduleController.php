@@ -21,10 +21,13 @@ class ScheduleController extends Controller
 
     public function store(Request $request)
     {
-        $scheduleData = $request->only([
-            'title', 'place', 'description', 'start_at', 'end_at'
+        $scheduleData = $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'required',
+            'start_at' => 'date',
+            'end_at' => 'nullable|date|after_or_equal:start_at'
         ]);
-        
+
         $schedule = Schedule::create($scheduleData);
 
         return redirect()->route('schedule.index');
