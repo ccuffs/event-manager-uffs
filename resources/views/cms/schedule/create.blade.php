@@ -21,10 +21,10 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="name"> Nome </label>
+                                        <label for="title"> Nome </label>
                                         <input
-                                            name="name"
-                                            id="name"
+                                            name="title"
+                                            id="title"
                                             class="form-control"
                                             placeholder="Nome"
                                             required

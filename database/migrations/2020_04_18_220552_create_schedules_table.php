@@ -19,7 +19,7 @@ class CreateSchedulesTable extends Migration
             $table->text('description');
             $table->string('place');
             $table->dateTime('start_at');
-            $table->dateTime('end_at');
+            $table->dateTime('end_at')->nullable();
             $table->timestamps();
         });
     }
