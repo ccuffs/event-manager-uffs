@@ -1,4 +1,8 @@
-@extends('cms.layouts.app', ['title' => 'Palestrantes', 'navName' => 'Palestrantes', 'activePage' => 'speakers'])
+@extends('cms.layouts.app',[
+    'title' => 'Palestrantes',
+    'navName' => 'Palestrantes',
+    'activePage' => 'speakers'
+])
 
 @section('content')
     <div class="content" id="app">

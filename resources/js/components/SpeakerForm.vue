@@ -5,12 +5,12 @@
             <div class="col-sm-6">
                 <div class="form-group">
                     <label for="name"> Nome </label>
-                    <input type="text" name="name" ref="name" class="form-control" placeholder="Nome" required>
+                    <input type="text" name="name" ref="name" v-model="name" class="form-control" placeholder="Nome" required>
                 </div>
 
                 <div class="form-group">
                     <label for="biography"> Biografia </label>
-                    <textarea name="biography" ref="biography" class="form-control h-auto" placeholder="Biografia" cols="30" rows="8" required></textarea>
+                    <textarea name="biography" ref="biography" v-model="biography" class="form-control h-auto" placeholder="Biografia" cols="30" rows="8" required></textarea>
                 </div>
             </div>
 

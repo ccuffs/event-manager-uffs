@@ -1,7 +1,7 @@
 @extends('cms.layouts.app', ['title' => 'Palestrantes', 'navName' => 'Palestrantes', 'activePage' => 'speakers'])
 
 @section('content')
-    <div class="content">
+    <div class="content" id="app">
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
@@ -26,6 +26,12 @@
                             </label>
                         </div>
                     </div>
+                    @if(session('status'))
+                        <alert-toast
+                            inner-text="{{ session('status') }}"
+                            classes="alert-info">
+                        </alert-toast>
+                    @endif
                 </div>
 
                 <div class="card-body">

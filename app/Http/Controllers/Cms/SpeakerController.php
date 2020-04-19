@@ -61,7 +61,7 @@ class SpeakerController extends Controller
 
         $speaker->save();
 
-        return redirect()->route('speaker.index');
+        return redirect()->route('speaker.index')->withStatus('Palestrante cadastrado com sucesso.');
     }
 
     /**
