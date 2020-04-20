@@ -11,7 +11,8 @@ class ScheduleController extends Controller
 {
     public function index()
     {
-        return view('cms.schedule.index');
+        $schedules = Schedule::all();
+        return view('cms.schedule.index', compact('schedules'));
     }
 
     public function create()
@@ -36,7 +37,7 @@ class ScheduleController extends Controller
 
     public function show(Schedule $schedule)
     {
-        //
+        return view('cms.schedule.show', compact('schedule'));
     }
 
     public function edit(Schedule $schedule)
