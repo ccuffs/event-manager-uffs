@@ -83,6 +83,9 @@
                                         <input
                                             type="number"
                                             name="duration"
+                                            value="1"
+                                            min="1"
+                                            max="365"
                                             class="form-control @error('duration') is-invalid @enderror"
                                             min="1"
                                             value="1"

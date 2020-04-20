@@ -797,6 +797,7 @@ body > .navbar-collapse[data-color=purple]:after {
   border-width: 2px;
   background-color: transparent;
   font-weight: 400;
+  cursor: pointer;
   opacity: 0.8;
   filter: alpha(opacity=80);
   padding: 8px 16px;
@@ -1581,6 +1582,10 @@ fieldset[disabled] .form-control {
   border-color: #9A9A9A;
 }
 
+textarea.form-control {
+  height: auto;
+}
+
 .alert {
   border: 0;
   border-radius: 0;
@@ -1771,7 +1776,7 @@ fieldset[disabled] .form-control {
   position: absolute;
   width: 19px;
   height: 19px;
-  margin-top: -12px;
+  margin-top: 0px;
   margin-left: -23px;
   font-size: 21px;
   cursor: pointer;
@@ -2847,8 +2852,6 @@ Copyright (c) 2015 Daniel Eden
 .card .table tbody td:last-child,
 .card .table thead th:last-child {
   padding-right: 15px;
-  display: -webkit-inline-box;
-  display: inline-flex;
 }
 
 .card .alert {
@@ -3811,18 +3814,6 @@ Copyright (c) 2015 Daniel Eden
 
   .footer:not(.footer-big) nav > ul li:first-child {
     margin-left: 0;
-  }
-
-  .card form [class*=col-] {
-    padding: 6px;
-  }
-
-  .card form [class*=col-]:first-child {
-    padding-left: 15px;
-  }
-
-  .card form [class*=col-]:last-child {
-    padding-right: 15px;
   }
 }
 

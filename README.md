@@ -69,6 +69,11 @@ Após, crie os esquemas rodando o comando:
 php artisan migrate
 ```
 
+Ainda será preciso possibilitar que as imagens salvas pelo usuário possam ser novamente carregadas, faça isso utilizando o seguinte comando:
+```bash
+php artisan storage:link
+```
+
 Finalmente, é necessário criar uma chave para a aplicação:
 ```bash
 php artisan key:generate

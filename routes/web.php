@@ -16,9 +16,9 @@ Route::get('/login', 'LoginController@index')->name('login.index');
 Route::post('/login', 'LoginController@auth')->name('login.auth');
 Route::get('/logout', 'LoginController@logout')->name('login.logout');
 
-
-
 Route::prefix('cms')->middleware('auth')->namespace('Cms')->group(function () {
     Route::resource('event', 'EventController');
     Route::get('/home', 'HomeController@index')->name('cms.home');
+    Route::resource('speaker', 'SpeakerController');
+    Route::resource('schedule', 'ScheduleController');
 });
