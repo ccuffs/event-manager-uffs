@@ -48,7 +48,7 @@ class EventController extends Controller
             'place' => 'required|max:255',
             'course' => 'required|max:255',
             'startDate' => 'required|date',
-            'duration' => 'required',
+            'duration' => 'required|in:1,365',
             'enrollable' => 'boolean',
         ]);
 

@@ -79,10 +79,13 @@
 
                                 <div class="col-sm-3">
                                     <div class="form-group">
-                                        <label>Duração do Evento</label>
+                                        <label>Duração do Evento (em dias)</label>
                                         <input
                                             type="number"
                                             name="duration"
+                                            value="1"
+                                            min="1"
+                                            max="365"
                                             class="form-control @error('duration') is-invalid @enderror"
                                         >
                                     </div>
