@@ -770,6 +770,7 @@ body > .navbar-collapse[data-color=purple]:after {
   border-width: 2px;
   background-color: transparent;
   font-weight: 400;
+  cursor: pointer;
   opacity: 0.8;
   filter: alpha(opacity=80);
   padding: 8px 16px;

@@ -22,6 +22,11 @@
                     <a href="{{ route('schedule.edit', $schedule) }}" class="btn btn-primary">
                         Editar
                     </a>
+                    <form action="{{ route('schedule.destroy', $schedule) }}" class="d-inline" method="post">
+                        @method('delete')
+                        @csrf
+                        <button class="btn btn-danger">Excluir</button>
+                    </form>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-hover">

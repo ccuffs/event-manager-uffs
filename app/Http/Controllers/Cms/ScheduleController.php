@@ -65,6 +65,11 @@ class ScheduleController extends Controller
 
     public function destroy(Schedule $schedule)
     {
-        //
+        try {
+            $schedule->delete();
+            return redirect()->route('schedule.index')->withSuccess('Progração excluída.');
+        } catch (\Throwable $th) {
+            return redirect()->route('schedule.index')->withError('Erro ao excluir programação.');
+        }
     }
 }
