@@ -19,6 +19,9 @@
                     <a href="{{ route('schedule.index') }}" class="btn btn-primary">
                         Voltar
                     </a>
+                    <a href="{{ route('schedule.edit', $schedule) }}" class="btn btn-primary">
+                        Editar
+                    </a>
                     <form action="{{ route('schedule.destroy', $schedule) }}" class="d-inline" method="post">
                         @method('delete')
                         @csrf
