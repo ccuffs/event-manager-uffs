@@ -62,20 +62,6 @@
            }
         }
     }
-
-    .card{
-        form{
-            [class*="col-"]{
-                padding: 6px;
-            }
-            [class*="col-"]:first-child{
-                padding-left: 15px;
-            }
-            [class*="col-"]:last-child{
-                padding-right: 15px;
-            }
-        }
-    }
 }
 
 /*          Changes for small display      */
