@@ -19,6 +19,9 @@
                     <a href="{{ route('schedule.index') }}" class="btn btn-primary">
                         Voltar
                     </a>
+                    <a href="{{ route('schedule.edit', $schedule) }}" class="btn btn-primary">
+                        Editar
+                    </a>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-hover">

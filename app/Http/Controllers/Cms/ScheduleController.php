@@ -42,12 +42,25 @@ class ScheduleController extends Controller
 
     public function edit(Schedule $schedule)
     {
-        //
+        return view('cms.schedule.edit', compact('schedule'));
     }
 
     public function update(Request $request, Schedule $schedule)
     {
-        //
+        $scheduleData = $request->validate([
+            'title' => 'required|max:255',
+            'place' => 'required|max:255',
+            'description' => 'required',
+            'start_at' => 'date',
+            'end_at' => 'nullable|date|after_or_equal:start_at'
+        ]);
+
+        try {
+            $schedule = $schedule->update($scheduleData);
+            return redirect()->route('schedule.index')->withSuccess('Programação atualizada.');
+        } catch (\Throwable $th) {
+            return redirect()->route('schedule.index')->withSuccess('Falha ao atualizar programação.');
+        }
     }
 
     public function destroy(Schedule $schedule)
