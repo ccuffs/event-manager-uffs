@@ -1,57 +1,130 @@
-@extends('cms.layouts.app', ['activePage' => 'newEvent', 'title' => 'Event Manager UFFS', 'navName' => 'Novo Evento'])
+@extends('cms.layouts.app', [
+    'title' => 'Event Manager UFFS',
+    'navName' => 'Novo Evento',
+    'activePage' => 'event',
+])
 
 @section('content')
     <div class="content">
         <div class="container-fluid">
+            <div class="card">
 
-            <form class="" action="{{ route('event.store') }}" method="post">
-                @csrf
 
-                {{-- event name --}}
-                <div class="form-group">
-                    <label>Nome do Evento</label>
-                    <input type="text" name="name" class="form-control">
-                </div>
+                <form class="" action="{{ route('event.store') }}" method="post">
+                    @csrf
 
-                {{-- event description --}}
-                <div class="form-group">
-                    <label>Breve Descrição</label>
-                    <textarea class="form-control" name="description" id="description" maxlength="300"></textarea>
-                </div>
+                    <div class="card-header">
+                        <h4 class="card-title">Novo Evento</h4>
+                    </div>
 
-                {{-- event place --}}
-                <div class="form-group">
-                    <label>Local do Evento</label>
-                    <input type="text" name="place" class="form-control">
-                </div>
+                    <div class="card-body">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
 
-                {{-- event course --}}
-                <div class="form-group">
-                    <label>Curso</label>
-                    <input type="text" name="course" class="form-control">
-                </div>
+                        <div class="row">
 
-                {{-- start date --}}
-                <div class="form-group">
-                    <label>Data de início</label>
-                    <input type="text" name="startDate" pattern="\d{1,2}/\d{1,2}/\d{4}" maxlength="10" class="form-control">
-                </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Nome do Evento</label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        class="form-control @error('name') is-invalid @enderror"
+                                    >
+                                </div>
+                            </div>
 
-                {{-- event duration --}}
-                <div class="form-group">
-                    <label>Duração do Evento</label>
-                    <input type="number" name="duration" class="form-control">
-                </div>
 
-                {{-- enrollable option --}}
-                <div class="form-group">
-                    <input type="checkbox" name="enrollable" class="form-control" value="1">                    
-                    <label>Evento é inscritível</label>
-                </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Local do Evento</label>
+                                    <input
+                                        type="text"
+                                        name="place"
+                                        class="form-control @error('place') is-invalid @enderror"
+                                    >
+                                </div>
+                            </div>
 
-                <button type="submit" name="submit">Salvar</button>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Curso</label>
+                                    <input
+                                        type="text"
+                                        name="course"
+                                        class="form-control @error('course') is-invalid @enderror"
+                                    >
+                                </div>
+                            </div>
 
-            </form>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>Data de início</label>
+                                    <input
+                                        type="date"
+                                        name="startDate"
+                                        class="form-control @error('startDate') is-invalid @enderror"
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>Duração do Evento</label>
+                                    <input
+                                        type="number"
+                                        name="duration"
+                                        class="form-control @error('duration') is-invalid @enderror"
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="description">Breve Descrição</label>
+                                    <textarea
+                                        name="description"
+                                        id="description"
+                                        maxlength="300"
+                                        rows="3"
+                                        class="form-control @error ('description') is-invalid @enderror"
+                                    ></textarea>
+                                </div>
+                            </div>
+
+                            {{-- enrollable option --}}
+                            <div class="form-group">
+                                {{-- <div class="form-check d-inline"> --}}
+                                    <label class="form-check-label">
+                                        {{-- <span class="form-check-sign"></span> --}}
+                                        Evento é inscritível
+                                        <input
+                                            type="checkbox"
+                                            class="form-check-input"
+                                            value="1"
+                                            name="enrollable"
+                                        >
+                                    </label>
+                                {{-- </div> --}}
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="card-footer">
+                        <button type="submit" name="submit" class="btn btn-success">Salvar</button>
+                    </div>
+
+                </form>
+            </div>
+
 
         </div>
     </div>
