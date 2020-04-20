@@ -1,7 +1,7 @@
 @extends('cms.layouts.app', ['title' => 'Palestrantes', 'navName' => 'Palestrantes', 'activePage' => 'speakers'])
 
 @section('content')
-    <div class="content">
+    <div class="content" id="app">
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
@@ -26,9 +26,16 @@
                             </label>
                         </div>
                     </div>
+                    @if(session('status'))
+                        <alert-toast
+                            inner-text="{{ session('status') }}"
+                            classes="alert-info">
+                        </alert-toast>
+                    @endif
                 </div>
 
                 <div class="card-body">
+                @if(!$speakers->isEmpty())
                     <div class="table-responsive">
                         <table class="table table-hover">
                             <thead>
@@ -45,12 +52,17 @@
                                         <td> {{ $speaker->biography }}</td>
                                         <td>
                                             <form action="{{ route('speaker.destroy', $speaker) }}" method="post">
+                                                
                                                 @csrf
                                                 @method('delete')
 
                                                 <button type="submit" class="btn btn-simple btn-danger">
                                                     <i class="nc-icon nc-simple-remove"></i>
                                                 </button>
+
+                                                <a href="{{ route('speaker.edit', $speaker) }}" class="ml-2">
+                                                    <i class="fa fa-edit"></i>
+                                                </a>
                                             </form>
                                         </td>
                                     </tr>
@@ -58,6 +70,12 @@
                             </tbody>
                         </table>
                     </div>
+                @else
+                    <div class="alert alert-info fit-content" style="width: fit-content;">
+                        <i class="fa fa-warning"></i>
+                        Não há nenhum palestrante cadastrado
+                    </div>
+                @endif
                 </div>
             </div>
         </div>
