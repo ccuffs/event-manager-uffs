@@ -9,6 +9,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('cms.event.index');
+        return redirect() -> route('event.index');
     }
 }

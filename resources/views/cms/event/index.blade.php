@@ -23,29 +23,34 @@
                 </div>
 
                 <div class="card-body">
-                    <div class="table-responsive table-full-width">
-                        <table class="table table-hover">
-                            <thead>
-                                <th>Nome</th>
-                                <th>Data</th>
-                                <th>Inscritos</th>
-                                <th>Local</th>
-                                <th>Ações</th>
-                            </thead>
-                            
-                            <tbody>
-                                @foreach ($events as $event)
-                                    <tr>
-                                        <td>{{ $event -> name }}</td>
-                                        <td>{{ date('d/m/Y', strtotime($event -> startDate)) }}</td>
-                                        <td>coming soon...</td>
-                                        <td>{{ $event -> place }}</td>
-                                        <td> . </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
+                    @if (! $events -> isEmpty())
+                        <div class="table-responsive table-full-width">
+                            <table class="table table-hover">
+                                <thead>
+                                    <th>Nome</th>
+                                    <th>Data</th>
+                                    <th>Inscritos</th>
+                                    <th>Local</th>
+                                    <th>Ações</th>
+                                </thead>
+
+                                <tbody>
+                                    @foreach ($events as $event)
+                                        <tr>
+                                            <td>{{ $event -> name }}</td>
+                                            <td>{{ date('d/m/Y', strtotime($event -> startDate)) }}</td>
+                                            <td>coming soon...</td>
+                                            <td>{{ $event -> place }}</td>
+                                            <td> . </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    @else
+                        <h4>Nenhum evento cadastrado</h4>
+                        <h4>Clique em <a href="{{ route('event.create') }}" class="text-primary">Novo +</a> para criar um evento.</h4>
+                    @endif
                 </div>
             </div>
         </div>
