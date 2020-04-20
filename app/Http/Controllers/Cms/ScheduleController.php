@@ -59,7 +59,7 @@ class ScheduleController extends Controller
             $schedule = $schedule->update($scheduleData);
             return redirect()->route('schedule.index')->withSuccess('Programação atualizada.');
         } catch (\Throwable $th) {
-            return redirect()->route('schedule.index')->withSuccess('Falha ao atualizar programação.');
+            return redirect()->route('schedule.index')->withError('Falha ao atualizar programação.');
         }
     }
 

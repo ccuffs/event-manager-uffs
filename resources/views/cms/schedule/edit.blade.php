@@ -78,7 +78,7 @@
                                         <input
                                             name="end_at"
                                             @if ($schedule->end_at)
-                                            value="{{$schedule->end_at->format('d/m/Y')}}"
+                                            value="{{$schedule->end_at->format('Y-m-d')}}"
                                             @endif
                                             class="form-control @error('end_at') is-invalid @enderror"
                                             id="end_at"
