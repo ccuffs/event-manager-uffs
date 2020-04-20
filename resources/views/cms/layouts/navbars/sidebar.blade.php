@@ -6,10 +6,10 @@
             </a>
         </div>
         <ul class="nav">
-            <li class="nav-item @if($activePage == 'dashboard') active @endif">
-                <a class="nav-link" href="{{route('cms.home')}}">
-                    <i class="nc-icon nc-chart-pie-35"></i>
-                    <p>Dashboard</p>
+            <li class="nav-item @if($activePage == 'event') active @endif">
+                <a class="nav-link collapsed" href="{{ route('event.index') }}">
+                    <i class="nc-icon nc-single-copy-04"></i>
+                    <p>Eventos</p>
                 </a>
             </li>
         </ul>
