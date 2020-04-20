@@ -48,7 +48,7 @@ class EventController extends Controller
             'place' => 'required|max:255',
             'course' => 'required|max:255',
             'startDate' => 'required|date',
-            'duration' => 'required',
+            'duration' => 'required|in:1,365',
             'enrollable' => 'boolean',
         ]);
 
@@ -104,6 +104,12 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //
+        try {
+            $event->delete();
+            return redirect()->route('event.index')->with('success', 'Evento removido com sucesso');
+
+        } catch (\Throwable $e) {
+            return redirect()->route('event.index')->with('error', 'Erro ao excluir evento');
+        }
     }
 }

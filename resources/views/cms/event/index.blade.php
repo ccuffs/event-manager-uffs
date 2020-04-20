@@ -23,6 +23,18 @@
                 </div>
 
                 <div class="card-body">
+                    @if (session('success'))
+                        <div class="alert alert-success alert-dismissible fade show">
+                            {{ session('success') }}
+                        </div>
+
+                    @elseif (session('error'))
+                        <div class="alert alert-danger alert-dismissible fade show">
+                            {{ session('error') }}
+                        </div>
+
+                    @endif
+
                     @if (! $events -> isEmpty())
                         <div class="table-responsive table-full-width">
                             <table class="table table-hover">
@@ -41,7 +53,21 @@
                                             <td>{{ date('d/m/Y', strtotime($event -> startDate)) }}</td>
                                             <td>coming soon...</td>
                                             <td>{{ $event -> place }}</td>
-                                            <td> . </td>
+                                            <td>
+                                                <form
+                                                    action="{{ route('event.destroy', $event) }}"
+                                                    method="post"
+                                                    class="d-inline"
+                                                >
+                                                    @method('delete')
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-danger btn-sm">
+                                                        Excluir
+                                                        <i class="nc-icon nc-simple-remove"></i>
+                                                    </button>
+
+                                                </form>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
