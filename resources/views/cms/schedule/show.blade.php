@@ -19,6 +19,11 @@
                     <a href="{{ route('schedule.index') }}" class="btn btn-primary">
                         Voltar
                     </a>
+                    <form action="{{ route('schedule.destroy', $schedule) }}" class="d-inline" method="post">
+                        @method('delete')
+                        @csrf
+                        <button class="btn btn-danger">Excluir</button>
+                    </form>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-hover">

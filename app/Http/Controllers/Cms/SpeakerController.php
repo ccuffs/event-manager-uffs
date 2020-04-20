@@ -18,6 +18,7 @@ class SpeakerController extends Controller
     public function index()
     {
         $speakers = Speaker::all();
+        
         return view('cms.speaker.index', ['speakers' => $speakers]);
     }
 
@@ -48,6 +49,7 @@ class SpeakerController extends Controller
         {
             $extension = $photo->getClientOriginalExtension();
             $fileName = $photo->getFilename().'.'.$extension;
+            
             Storage::disk('public')->put($fileName,  File::get($photo));
         }
             
@@ -59,7 +61,7 @@ class SpeakerController extends Controller
 
         $speaker->save();
 
-        return redirect()->route('speaker.index');
+        return redirect()->route('speaker.index')->withStatus('Palestrante cadastrado com sucesso.');
     }
 
     /**
@@ -81,7 +83,7 @@ class SpeakerController extends Controller
      */
     public function edit(Speaker $speaker)
     {
-        //
+        return view('cms.speaker.edit', ['speaker' => $speaker]);
     }
 
     /**
@@ -93,7 +95,31 @@ class SpeakerController extends Controller
      */
     public function update(Request $request, Speaker $speaker)
     {
-        //
+        $speaker->name = $request->name;
+        $speaker->biography = $request->biography;
+        $photo = $request->file('photo');
+
+        if ($photo)
+        {
+            $this->deletePhoto($speaker->photo);
+            
+            $extension = $photo->getClientOriginalExtension();
+            $speaker->photo = $photo->getFilename().'.'.$extension;
+            
+            Storage::disk('public')->put($speaker->photo,  File::get($photo));
+        }
+
+        $speaker->update();
+
+        return redirect()->route('speaker.index')->withStatus('Palestrante atualizado com sucesso');
+    }
+
+    private function deletePhoto($photoName)
+    {
+        if ($photoName)
+        {
+            Storage::disk('public')->delete($photoName);
+        }
     }
 
     /**
@@ -104,6 +130,7 @@ class SpeakerController extends Controller
      */
     public function destroy(Speaker $speaker)
     {
+        $this->deletePhoto($speaker->photo);
         $speaker->delete();
         
         return redirect()->route('speaker.index')->withStatus('Palestrante removido com sucesso');

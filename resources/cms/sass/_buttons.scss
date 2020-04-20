@@ -2,6 +2,7 @@
     border-width: $border-thick;
     background-color: $transparent-bg;
     font-weight: $font-weight-normal;
+    cursor: pointer;
 
     @include opacity(.8);
     padding: $padding-base-vertical $padding-base-horizontal;

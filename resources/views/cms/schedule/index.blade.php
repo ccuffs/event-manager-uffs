@@ -20,6 +20,15 @@
                         Adicionar
                     </a>
                 </div>
+                @if (Session::has('success'))
+                    <div class="alert alert-success">
+                        {{ Session::get('success') }}
+                    </div>
+                @elseif (Session::has('error'))
+                    <div class="alert alert-danger">
+                        {{ Session::get('error') }}
+                    </div>
+                @endif
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
@@ -36,6 +45,11 @@
                                 <td>{{ $schedule->start_at->format('d/m/Y H:i') }}</td>
                                 <td>
                                     <a href="{{ route('schedule.show', $schedule) }}" class="btn btn-sm btn-primary">Exibir</a>
+                                    <form action="{{ route('schedule.destroy', $schedule) }}" class="d-inline" method="post">
+                                        @method('delete')
+                                        @csrf
+                                        <button class="btn btn-sm btn-danger">Excluir</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
