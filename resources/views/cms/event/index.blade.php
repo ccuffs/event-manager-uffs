@@ -13,7 +13,7 @@
             			<th>Ações</th>
             		</thead>
             		<tbody>
-                        @foreach ($events as $event)
+                        @foreach ($events ?? '' as $event)
                             <tr>
                                 <td>{{ $event -> name }}</td>
                                 <td>{{ $event -> date }}</td>

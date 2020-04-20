@@ -34,14 +34,22 @@
                 {{-- start date --}}
                 <div class="form-group">
                     <label>Data de início</label>
-                    <input type="text" name="startDate" class="form-control">
+                    <input type="text" name="startDate" pattern="\d{1,2}/\d{1,2}/\d{4}" maxlength="10" class="form-control">
                 </div>
 
-                {{-- event place --}}
+                {{-- event duration --}}
                 <div class="form-group">
-                    <label>Local do Evento</label>
-                    <input type="text" name="place" class="form-control">
+                    <label>Duração do Evento</label>
+                    <input type="number" name="duration" class="form-control">
                 </div>
+
+                {{-- enrollable option --}}
+                <div class="form-group">
+                    <input type="checkbox" name="enrollable" class="form-control" value="1">                    
+                    <label>Evento é inscritível</label>
+                </div>
+
+                <button type="submit" name="submit">Salvar</button>
 
             </form>
 

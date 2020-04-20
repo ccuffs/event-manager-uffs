@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Event;
+use Carbon\Carbon;
 
 class EventController extends Controller
 {
@@ -41,7 +42,31 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
+        // $validatedData = $request -> validate([
         //
+        // ]);
+
+        // dd($request);
+        $name = $request -> name;
+        $description = $request -> description;
+        $place = $request -> place;
+        $course = $request -> course;
+        $startDate = Carbon::createFromFormat("d/m/Y", $request->startDate)
+                            -> format("Y-m-d");
+        $duration = $request -> duration;
+        $enrollable = $request -> enrollable;
+
+        Event::create([
+            'name' => $name,
+            'description' => $description,
+            'place' => $place,
+            'course' => $course,
+            'startDate' => $startDate,
+            'duration' => $duration,
+            'enrollable' => $enrollable,
+        ]);
+
+        return redirect() -> route('event.index');
     }
 
     /**
