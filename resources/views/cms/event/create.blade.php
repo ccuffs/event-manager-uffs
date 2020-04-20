@@ -87,6 +87,9 @@
                                             min="1"
                                             max="365"
                                             class="form-control @error('duration') is-invalid @enderror"
+                                            min="1"
+                                            value="1"
+                                            max="365"
                                         >
                                     </div>
                                 </div>

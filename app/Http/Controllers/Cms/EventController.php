@@ -104,6 +104,12 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //
+        try {
+            $event->delete();
+            return redirect()->route('event.index')->with('success', 'Evento removido com sucesso');
+
+        } catch (\Throwable $e) {
+            return redirect()->route('event.index')->with('error', 'Erro ao excluir evento');
+        }
     }
 }
