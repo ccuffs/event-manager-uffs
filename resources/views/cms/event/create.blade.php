@@ -28,91 +28,93 @@
                             </div>
                         @endif
 
-                        <div class="row">
+                        <div class="p-2">
 
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label>Nome do Evento</label>
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        class="form-control @error('name') is-invalid @enderror"
-                                    >
-                                </div>
-                            </div>
+                            <div class="row">
 
-
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label>Local do Evento</label>
-                                    <input
-                                        type="text"
-                                        name="place"
-                                        class="form-control @error('place') is-invalid @enderror"
-                                    >
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label>Curso</label>
-                                    <input
-                                        type="text"
-                                        name="course"
-                                        class="form-control @error('course') is-invalid @enderror"
-                                    >
-                                </div>
-                            </div>
-
-                            <div class="col-sm-3">
-                                <div class="form-group">
-                                    <label>Data de início</label>
-                                    <input
-                                        type="date"
-                                        name="startDate"
-                                        class="form-control @error('startDate') is-invalid @enderror"
-                                    >
-                                </div>
-                            </div>
-
-                            <div class="col-sm-3">
-                                <div class="form-group">
-                                    <label>Duração do Evento</label>
-                                    <input
-                                        type="number"
-                                        name="duration"
-                                        class="form-control @error('duration') is-invalid @enderror"
-                                    >
-                                </div>
-                            </div>
-
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label for="description">Breve Descrição</label>
-                                    <textarea
-                                        name="description"
-                                        id="description"
-                                        maxlength="300"
-                                        rows="3"
-                                        class="form-control @error ('description') is-invalid @enderror"
-                                    ></textarea>
-                                </div>
-                            </div>
-
-                            {{-- enrollable option --}}
-                            <div class="form-group">
-                                {{-- <div class="form-check d-inline"> --}}
-                                    <label class="form-check-label">
-                                        {{-- <span class="form-check-sign"></span> --}}
-                                        Evento é inscritível
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Nome do Evento</label>
                                         <input
-                                            type="checkbox"
-                                            class="form-check-input"
-                                            value="1"
-                                            name="enrollable"
+                                            type="text"
+                                            name="name"
+                                            class="form-control @error('name') is-invalid @enderror"
                                         >
-                                    </label>
-                                {{-- </div> --}}
+                                    </div>
+                                </div>
+
+
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Local do Evento</label>
+                                        <input
+                                            type="text"
+                                            name="place"
+                                            class="form-control @error('place') is-invalid @enderror"
+                                        >
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Curso</label>
+                                        <input
+                                            type="text"
+                                            name="course"
+                                            class="form-control @error('course') is-invalid @enderror"
+                                        >
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>Data de início</label>
+                                        <input
+                                            type="date"
+                                            name="startDate"
+                                            class="form-control @error('startDate') is-invalid @enderror"
+                                        >
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>Duração do Evento</label>
+                                        <input
+                                            type="number"
+                                            name="duration"
+                                            class="form-control @error('duration') is-invalid @enderror"
+                                        >
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="description">Breve Descrição</label>
+                                        <textarea
+                                            name="description"
+                                            id="description"
+                                            maxlength="300"
+                                            rows="5"
+                                            class="form-control @error ('description') is-invalid @enderror"
+                                        ></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group d-inline">
+                                    <div class="form-check d-inline">
+                                        <label class="form-check-label">
+                                            <input
+                                                type="checkbox"
+                                                name="enrollable"
+                                                value="1"
+                                                class="form-check-input"
+                                            >
+                                            <span class="form-check-sign"></span>
+                                            Evento é inscitível
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
