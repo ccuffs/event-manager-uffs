@@ -19,9 +19,7 @@ class EventController extends Controller
     {
         $events = Event::all();
 
-        return view('cms.event.index', [
-            'events' => $events
-        ]);
+        return view('cms.event.index', compact('events'));
     }
 
     /**
@@ -48,7 +46,7 @@ class EventController extends Controller
             'place' => 'required|max:255',
             'course' => 'required|max:255',
             'startDate' => 'required|date',
-            'duration' => 'required|in:1,365',
+            'duration' => 'required|integer|min:1|max:365',
             'enrollable' => 'boolean',
         ]);
 
@@ -70,7 +68,7 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        //
+        return view('cms.event.show', compact('event'));
     }
 
     /**
@@ -81,7 +79,7 @@ class EventController extends Controller
      */
     public function edit(Event $event)
     {
-        //
+        return view('cms.event.edit', compact('event'));
     }
 
     /**
@@ -93,7 +91,27 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        //
+        $validatedData = $request -> validate([
+            'name' => 'required|max:255',
+            'description' => 'required',
+            'place' => 'required|max:255',
+            'course' => 'required|max:255',
+            'startDate' => 'required|date',
+            'duration' => 'required|integer|min:1|max:365',
+            'enrollable' => 'boolean',
+        ]);
+
+        if (! array_key_exists('enrollable', $validatedData)) {
+            $validatedData['enrollable'] = "0";
+        }
+
+        try {
+            $event->update($validatedData);
+            return redirect() -> route('event.show', $event) -> with('success', 'Evento atualizado com sucesso');
+
+        } catch (\Throwable $e) {
+            return redirect() -> route('event.show', $event) -> with('error', 'Não foi possível atualizar evento');
+        }
     }
 
     /**
@@ -106,10 +124,10 @@ class EventController extends Controller
     {
         try {
             $event->delete();
-            return redirect()->route('event.index')->with('success', 'Evento removido com sucesso');
+            return redirect() -> route('event.index') -> with('success', 'Evento removido com sucesso');
 
         } catch (\Throwable $e) {
-            return redirect()->route('event.index')->with('error', 'Erro ao excluir evento');
+            return redirect() -> route('event.index') -> with('error', 'Erro ao excluir evento');
         }
     }
 }

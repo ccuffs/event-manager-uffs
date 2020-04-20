@@ -54,6 +54,11 @@
                                             <td>coming soon...</td>
                                             <td>{{ $event -> place }}</td>
                                             <td>
+                                                <a href="{{ route('event.show', $event) }}" class="btn btn-primary btn-sm">
+                                                    Exibir
+                                                    <i class="nc-icon nc-stre-right"></i>
+                                                </a>
+
                                                 <form
                                                     action="{{ route('event.destroy', $event) }}"
                                                     method="post"
