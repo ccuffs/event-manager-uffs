@@ -43,7 +43,8 @@
     <!--  Notifications Plugin    -->
     <script src="{{ asset('cms/js/plugins/bootstrap-notify.js') }}"></script>
     <script src="{{ asset('cms/js/dashboard.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
 </html>
 
 
