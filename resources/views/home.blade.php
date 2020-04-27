@@ -53,7 +53,18 @@
 
     {{-- Main --}}
     <main class="app-main">
-
+        @if (! $events -> isEmpty())
+            @foreach ($events as $event)
+                <base-card
+                    title="{{ $event -> name }}"
+                    description="{{ $event -> description }}"
+                    date="{{ date('d/m/Y', strtotime($event -> startDate)) }}"
+                    destination-url="{{ $event -> page_link }}"
+                ></base-card>
+            @endforeach
+        @else
+            <h4>Nenhum evento está disponível no momento.</h4>
+        @endif
     </main>
 
     {{-- Footer --}}
