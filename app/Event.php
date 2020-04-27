@@ -20,4 +20,9 @@ class Event extends Model
         'duration',
         'enrollable',
     ];
+
+    public function speakers()
+    {
+        return $this->hasMany('App\Speakers');
+    }
 }
