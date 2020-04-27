@@ -71,8 +71,8 @@
                                         <label>Data de início</label>
                                         <input
                                             type="date"
-                                            name="startDate"
-                                            class="form-control @error('startDate') is-invalid @enderror"
+                                            name="start_date"
+                                            class="form-control @error('start_date') is-invalid @enderror"
                                         >
                                     </div>
                                 </div>

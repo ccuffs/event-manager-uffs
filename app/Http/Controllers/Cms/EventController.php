@@ -45,7 +45,7 @@ class EventController extends Controller
             'description' => 'required',
             'place' => 'required|max:255',
             'course' => 'required|max:255',
-            'startDate' => 'required|date',
+            'start_date' => 'required|date',
             'duration' => 'required|integer|min:1|max:365',
             'enrollable' => 'boolean',
         ]);
@@ -96,7 +96,7 @@ class EventController extends Controller
             'description' => 'required',
             'place' => 'required|max:255',
             'course' => 'required|max:255',
-            'startDate' => 'required|date',
+            'start_date' => 'required|date',
             'duration' => 'required|integer|min:1|max:365',
             'enrollable' => 'boolean',
         ]);

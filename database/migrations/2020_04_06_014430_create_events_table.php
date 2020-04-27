@@ -19,9 +19,10 @@ class CreateEventsTable extends Migration
             $table->string('description');
             $table->string('place');
             $table->string('course');
-            $table->date('startDate');
+            $table->date('start_date');
             $table->integer('duration');
             $table->boolean('enrollable');
+            $table->string('page_link');
             $table->timestamps();
         });
     }
