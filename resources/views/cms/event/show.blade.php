@@ -5,7 +5,7 @@
 ])
 
 @section('content')
-    <div class="content">
+    <div class="content" id="app">
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
@@ -18,13 +18,11 @@
 
                         <div>
                             <a href="{{ route('event.index') }}" class="btn btn-secondary">
-                                Voltar
-                                <i class="nc-icon nc-stre-left"></i>
+                                <i class="fa fa-arrow-left"></i>
                             </a>
 
                             <a href="{{ route('event.edit', $event) }}" class="btn btn-primary">
-                                Editar
-                                <i class="nc-icon nc-single-copy-04"></i>
+                                <i class="fa fa-pencil"></i>
                             </a>
                         </div>
                     </div>
@@ -42,50 +40,19 @@
                         </div>
 
                     @endif
-                    
-                    <div class="table-responsive table-full-width">
-                        <table class="table table-hover">
-                            <tr>
-                                <th>Local do Evento</th>
-                                <td>{{ $event -> place }}</td>
-                            </tr>
 
-                            <tr>
-                                <th>Curso Relacionado</th>
-                                <td>{{ $event -> course }}</td>
-                            </tr>
-
-                            <tr>
-                                <th>Data de Início</th>
-                                <td>{{ date('d/m/Y', strtotime($event -> startDate)) }}</td>
-                            </tr>
-
-                            <tr>
-                                <th>Duração</th>
-                                <td>
-                                    {{ $event -> duration }}
-                                    @if ($event -> duration > 1)
-                                        dias
-                                    @else
-                                        dia
-                                    @endif
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <th>Descrição</th>
-                                <td>{{ $event -> description }}</td>
-                            </tr>
-                        </table>
-                    </div>
+                    <event-dashboard
+                        place="{{ $event -> place}}"
+                        course="{{ $event -> course }}"
+                        duration="{{ $event -> duration }}"
+                        start-date="{{ date('d/m/Y', strtotime($event -> startDate)) }}" 
+                        description="{{ $event -> description }}"
+                        enrollable="{{ $event -> enrollable }}"
+                        schedule-route="{{ route('schedule.index', ['event_id' => $event->id]) }}"
+                        speakers-route="{{ route('speaker.index', ['event_id' => $event->id]) }}"
+                    >
+                    </event-dashboard>
                 </div>
-
-                @if ($event -> enrollable)
-                    <div class="card-footer">
-                        <h5><i>O evento pode requerer inscrição dos participantes.</i></h5>
-                    </div>
-                @endif
-
             </div>
         </div>
     </div>

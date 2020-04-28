@@ -45,15 +45,15 @@
         </div>
 
         <div class="row">
-            <a :href="scheduleRoute" class="btn btn-primary w-32 my-3">
-                Programação
-            </a>
             <a :href="speakersRoute" class="btn btn-info w-33 mx-2 my-3">
                 Palestrantes
             </a>
+            <a :href="scheduleRoute" class="btn btn-primary w-32 my-3">
+                Programação
+            </a>
         </div>
 
-        <div class="row">
+        <div class="row" v-show="enrollable == '1'">
             <h4>
                 Gerência de Inscritos
 
@@ -106,6 +106,10 @@
                 default: ""
             },
             description: {
+                type: String,
+                default: ""
+            },
+            enrollable: {
                 type: String,
                 default: ""
             },
