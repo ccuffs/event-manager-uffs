@@ -58,8 +58,9 @@
                 <base-card
                     title="{{ $event -> name }}"
                     description="{{ $event -> description }}"
-                    date="{{ date('d/m/Y', strtotime($event -> startDate)) }}"
+                    date="{{ date('d/m/Y', strtotime($event -> start_date)) }}"
                     destination-url="{{ $event -> page_link }}"
+                    card-image="{{ asset('storage/' . $event -> banner) }}"
                 ></base-card>
             @endforeach
         @else
