@@ -20,5 +20,6 @@ class Event extends Model
         'duration',
         'enrollable',
         'page_link',
+        'banner',
     ];
 }

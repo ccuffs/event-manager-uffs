@@ -22,7 +22,8 @@ class CreateEventsTable extends Migration
             $table->date('start_date');
             $table->integer('duration');
             $table->boolean('enrollable');
-            $table->string('page_link');
+            $table->string('page_link')->nullable();
+            $table->string('banner')->nullable();
             $table->timestamps();
         });
     }
