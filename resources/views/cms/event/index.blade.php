@@ -50,7 +50,7 @@
                                     @foreach ($events as $event)
                                         <tr>
                                             <td>{{ $event -> name }}</td>
-                                            <td>{{ date('d/m/Y', strtotime($event -> startDate)) }}</td>
+                                            <td>{{ date('d/m/Y', strtotime($event -> start_date)) }}</td>
                                             <td>coming soon...</td>
                                             <td>{{ $event -> place }}</td>
                                             <td>

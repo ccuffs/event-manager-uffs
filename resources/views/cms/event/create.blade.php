@@ -5,12 +5,11 @@
 ])
 
 @section('content')
-    <div class="content">
+    <div class="content" id="app">
         <div class="container-fluid">
             <div class="card">
 
-
-                <form class="" action="{{ route('event.store') }}" method="post">
+                <form class="" action="{{ route('event.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
 
                     <div class="card-header">
@@ -107,7 +106,14 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group d-inline">
+                                <div class="col-12">
+                                    <img-handler
+                                        field-name="banner"
+                                    ></img-handler>
+
+                                </div>
+
+                                <div class="form-group col-12">
                                     <div class="form-check d-inline">
                                         <label class="form-check-label">
                                             <input

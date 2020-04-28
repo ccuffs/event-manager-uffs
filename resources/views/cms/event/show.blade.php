@@ -42,7 +42,7 @@
                         </div>
 
                     @endif
-                    
+
                     <div class="table-responsive table-full-width">
                         <table class="table table-hover">
                             <tr>
@@ -57,7 +57,7 @@
 
                             <tr>
                                 <th>Data de Início</th>
-                                <td>{{ date('d/m/Y', strtotime($event -> startDate)) }}</td>
+                                <td>{{ date('d/m/Y', strtotime($event -> start_date)) }}</td>
                             </tr>
 
                             <tr>
