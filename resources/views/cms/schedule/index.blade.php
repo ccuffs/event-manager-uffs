@@ -10,7 +10,9 @@
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">
-                    nome-do-evento/Programação
+                    <a href="{{ route('event.show', $event) }}">
+                        {{ $event->name }}
+                    </a> / Programação
                 </h4>
             </div>
 
