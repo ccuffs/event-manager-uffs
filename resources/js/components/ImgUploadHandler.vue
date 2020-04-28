@@ -46,15 +46,14 @@ export default {
         placeholder: {
             type: String,
             default: "Selecione uma imagem."
-        }
-    },
+        },
 
-    data: function() {
-        return {
-            imageUploaded: false,
-        }
+        // If there is already an image
+        imageUploaded: {
+            type: Boolean,
+            default: false,
+        },
     },
-
     methods: {
         handleImageUpload: function (event) {
             let input = event.target;

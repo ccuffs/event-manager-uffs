@@ -5,7 +5,7 @@
 ])
 
 @section('content')
-    <div class="content">
+    <div class="content" id="app">
         <div class="container-fluid">
             <div class="card">
 
@@ -108,6 +108,15 @@
                                             class="form-control @error ('description') is-invalid @enderror"
                                         >{{ trim($event -> description) }}</textarea>
                                     </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <img-handler
+                                        field-name="banner"
+                                        img-url="{{ asset('storage/' . $event -> banner) }}"
+                                        image-uploaded
+                                    ></img-handler>
+
                                 </div>
 
                                 <div class="form-group d-inline">
