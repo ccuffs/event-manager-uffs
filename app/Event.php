@@ -25,4 +25,9 @@ class Event extends Model
     {
         return $this->hasMany('App\Speakers');
     }
+
+    public function schedule()
+    {
+        return $this->hasMany('App\Schedule');
+    } 
 }
