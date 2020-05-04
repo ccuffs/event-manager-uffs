@@ -11,7 +11,8 @@ class Schedule extends Model
         'description',
         'place',
         'start_at',
-        'end_at'
+        'end_at', 
+        'event_id'
     ];
 
     protected $casts = [

@@ -8,7 +8,7 @@
                     
                     <div class="mb-3">
                         <h4 class="card-title">
-                            nome-do-evento/Palestrantes
+                            <a href="{{ route('event.show', $event) }}">{{ $event->name }}</a> / Palestrantes
                         </h4>
                     </div>
 
@@ -61,7 +61,7 @@
                                                 </button>
 
                                                 <a href="{{ route('speaker.edit', $speaker) }}" class="ml-2">
-                                                    <i class="fa fa-edit"></i>
+                                                    <i class="fa fa-pencil"></i>
                                                 </a>
                                             </form>
                                         </td>

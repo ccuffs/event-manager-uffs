@@ -14,6 +14,9 @@
                     <div class="card-header">
                         <h4 class="card-title">
                             Editar Palestrante
+                            <a href="{{ route('speaker.index', ['event_id' => $speaker->event_id]) }}" class="btn btn-primary float-right">
+                                <i class="fa fa-arrow-left"></i>
+                            </a>
                         </h4>
                     </div>
 
@@ -31,7 +34,7 @@
                     </div>
 
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-success btn-wd float-right mb-3">
+                        <button type="submit" class="btn btn-success btn-wd mb-3">
                             Atualizar
                             <i class="nc-icon nc-check-2"></i>
                         </button>

@@ -28,6 +28,8 @@ Vue.component('event-form', require('./components/EventForm.vue').default);
 Vue.component('speaker-form', require('./components/SpeakerForm.vue').default);
 
 Vue.component('alert-toast', require('./components/ToastAlert.vue').default);
+
+Vue.component('event-dashboard', require('./components/EventDashboard.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

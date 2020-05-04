@@ -13,6 +13,9 @@
                     <div class="card-header">
                         <h4 class="card-title">
                             Adicionar Programação
+                            <a href="{{ route('schedule.index', ['event_id' => $event_id]) }}" class="btn btn-primary float-right">
+                                <i class="fa fa-arrow-left"></i>
+                            </a>
                         </h4>
                     </div>
 
@@ -98,6 +101,7 @@
                                         ></textarea>
                                     </div>
                                 </div>
+                                <input type="hidden" value="{{ $event_id }}" name="event_id">
                             </div>
                         </div>
                     </div>

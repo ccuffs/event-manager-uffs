@@ -13,7 +13,10 @@
                     @method('PUT')
                     <div class="card-header">
                         <h4 class="card-title">
-                            Adicionar Programação
+                            Editar Programação
+                            <a href="{{ route('schedule.show', $schedule) }}" class="btn btn-primary float-right">
+                                <i class="fa fa-arrow-left"></i>
+                            </a>
                         </h4>
                     </div>
 

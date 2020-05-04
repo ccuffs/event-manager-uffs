@@ -10,13 +10,13 @@
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">
-                    nome-do-evento/{{ $schedule->title }}
+                    <a href="{{ route('event.show', $event) }}">{{ $event->name }}</a> / {{ $schedule->title }}
                 </h4>
             </div>
 
             <div class="card-body">
                 <div class="py-2">
-                    <a href="{{ route('schedule.index') }}" class="btn btn-primary">
+                    <a href="{{ route('schedule.index', ['event_id' => $event->id]) }}" class="btn btn-primary">
                         Voltar
                     </a>
                     <a href="{{ route('schedule.edit', $schedule) }}" class="btn btn-primary">
