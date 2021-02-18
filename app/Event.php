@@ -16,8 +16,10 @@ class Event extends Model
         'description',
         'place',
         'course',
-        'startDate',
+        'start_date',
         'duration',
         'enrollable',
+        'page_link',
+        'banner',
     ];
 }

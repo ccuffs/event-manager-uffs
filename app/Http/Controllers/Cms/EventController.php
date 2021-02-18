@@ -8,6 +8,9 @@ use App\Http\Controllers\Controller;
 use App\Event;
 use Carbon\Carbon;
 
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+
 class EventController extends Controller
 {
     /**
@@ -40,24 +43,41 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
+
         $validatedData = $request -> validate([
             'name' => 'required|max:255',
             'description' => 'required',
             'place' => 'required|max:255',
             'course' => 'required|max:255',
-            'startDate' => 'required|date',
+            'start_date' => 'required|date',
             'duration' => 'required|integer|min:1|max:365',
             'enrollable' => 'boolean',
         ]);
-
 
         if (! array_key_exists('enrollable', $validatedData)) {
             $validatedData['enrollable'] = "0";
         }
 
-        Event::create($validatedData);
+        $banner = $request -> file('banner');
+        $fileName = '';
 
-        return redirect() -> route('event.index');
+        if ($banner) {
+            $extension = $banner -> getClientOriginalExtension();
+            $fileName = $banner -> getFilename() . '.' . $extension;
+
+            Storage::disk('public')
+                -> put($fileName, File::get($banner));
+        }
+
+        $validatedData['banner'] = $fileName;
+
+        try {
+            Event::create($validatedData);
+            return redirect() -> route('event.index') -> with('success', 'Evento criado com sucesso.');
+
+        } catch (\Exception $e) {
+            return redirect() -> route('event.index') -> with('error', 'Erro ao criar evento.');
+        }
     }
 
     /**
@@ -96,7 +116,7 @@ class EventController extends Controller
             'description' => 'required',
             'place' => 'required|max:255',
             'course' => 'required|max:255',
-            'startDate' => 'required|date',
+            'start_date' => 'required|date',
             'duration' => 'required|integer|min:1|max:365',
             'enrollable' => 'boolean',
         ]);
@@ -109,7 +129,7 @@ class EventController extends Controller
             $event->update($validatedData);
             return redirect() -> route('event.show', $event) -> with('success', 'Evento atualizado com sucesso');
 
-        } catch (\Throwable $e) {
+        } catch (\Exception $e) {
             return redirect() -> route('event.show', $event) -> with('error', 'Não foi possível atualizar evento');
         }
     }
@@ -126,7 +146,7 @@ class EventController extends Controller
             $event->delete();
             return redirect() -> route('event.index') -> with('success', 'Evento removido com sucesso');
 
-        } catch (\Throwable $e) {
+        } catch (\Exception $e) {
             return redirect() -> route('event.index') -> with('error', 'Erro ao excluir evento');
         }
     }

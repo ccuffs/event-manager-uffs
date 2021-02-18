@@ -47,20 +47,6 @@
                         <p class="card__description">
                             {{ description }}
                         </p>
-
-                        <div class="card__controls">
-                            <div class="btn-group">
-                                <a href="#" class="btn btn--outline-primary">
-                                    <span>Visualizar</span>
-                                </a>
-                                <a href="#" class="btn btn--outline-success">
-                                    <span>Editar</span>
-                                </a>
-                                <a href="#" class="btn btn--outline-danger">
-                                    <span>Excluir</span>
-                                </a>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="card__show">
@@ -145,7 +131,5 @@ export default {
 </script>
 
 <style scoped>
-    .btn-group {
-        width: 100%;
-    }
+
 </style>
