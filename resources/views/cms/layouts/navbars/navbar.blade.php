@@ -16,8 +16,10 @@
             </ul>
             <ul class="navbar-nav d-flex align-items-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="">
-                        <span class="no-icon">Conta</span>
+                    <a class="nav-link" href="{{route('profile.index')}}">
+                        <span class="no-icon">
+                            Minha conta
+                        </span>
                     </a>
                 </li>
                 <li class="nav-item">
