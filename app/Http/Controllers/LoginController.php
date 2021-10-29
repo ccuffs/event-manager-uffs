@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use CCUFFS\Auth\AuthIdUFFS;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,16 +27,22 @@ class LoginController extends Controller
             'username' => 'required',
             'password' => 'required'
         ]);
-        $credentials = $request->only('username', 'password');
-        $userData = UffsAuthHelper::login($credentials);
 
-        if (!$userData) {
+        $auth = new AuthIdUFFS();
+
+        $userData  = $auth->login([
+            'user'     => $request->username,
+            'password' => $request->password
+        ]);
+
+        if ($userData == null) {
             return redirect()
                 ->route('login.index')
                 ->withErrors([
                     'credential' => 'Login inválido, tente novamente.'
                 ]);
         }
+
         $user = $this->getOrCreateUser($userData);
 
         Auth::login($user);
